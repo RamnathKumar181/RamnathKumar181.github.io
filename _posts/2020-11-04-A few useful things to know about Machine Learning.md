@@ -13,9 +13,8 @@ The author creates a brief introduction of the important concepts that guide mac
 Regardless of how many new models are out there, all models can be fundamentally broken down into these three simple components. Representation refers to the sequence of symbols which the computer can understand. Evaluation refers to the objective function that seperates the good classifier from the bad one. Finally, optimization refers to the method which allows the learning of the model.
 <p align="center">
 The three components of learning algorithms.
-<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Table-1.png?raw=true" alt="Table 1"/>
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Figure-1.png?raw=true" alt="Figure 1"/>
 </p>
-![The three components of learning algorithms.]()
 
 
 ## It’s Generalization that Counts
@@ -33,8 +32,10 @@ Machine Learning is an inductive process. It learns the representations with man
 ## Overfitting Has Many Faces
 
 When the knowledge and the data is not sufficient to train a complete model, the model might hallucinate traits and might not generalize properly. This leads to overfitting. The generalization error can be decomposed into bias and variance. Bias is the learner's tendency to consistently learn the wrong thing. Variance is the tendency to learn random things irrespective of real signal. Few solutions to overfitting include cross validation, regularization, dropout, etc.
-
-![Bias and Variance.](../assets/Papers/1/Table-2.png)
+<p align="center">
+Bias and Variance.
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Figure-2.png?raw=true" alt="Figure 2"/>
+</p>
 
 ## Intuition Fails in High Dimensions
 
@@ -57,7 +58,11 @@ practice they may not, because of limitations of the algorithm such as falling i
 learners can produce widely different frontiers while still making the same
 predictions in the regions that matter.
 
-![Very different frontiers can yield similar predictions.](../assets/Papers/1/Table-3.png)
+<p align="center">
+Very different frontiers can yield similar predictions.
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Figure-3.png?raw=true" alt="Figure 3"/>
+</p>
+
 
 
 ## Simplicity Does Not Imply Accuracy
