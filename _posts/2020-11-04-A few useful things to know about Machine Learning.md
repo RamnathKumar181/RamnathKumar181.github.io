@@ -13,8 +13,9 @@ The author creates a brief introduction of the important concepts that guide mac
 Regardless of how many new models are out there, all models can be fundamentally broken down into these three simple components. Representation refers to the sequence of symbols which the computer can understand. Evaluation refers to the objective function that seperates the good classifier from the bad one. Finally, optimization refers to the method which allows the learning of the model.
 <p align="center">
 The three components of learning algorithms.
-![The three components of learning algorithms.](../assets/Papers/1/Table-1.png)
 </p>
+![The three components of learning algorithms.](../assets/Papers/1/Table-1.png?style=centerme)
+
 
 ## It’s Generalization that Counts
 
