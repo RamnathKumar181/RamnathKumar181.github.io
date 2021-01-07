@@ -12,7 +12,7 @@ The author creates a brief introduction of the important concepts that guide mac
 
 Regardless of how many new models are out there, all models can be fundamentally broken down into these three simple components. Representation refers to the sequence of symbols which the computer can understand. Evaluation refers to the objective function that seperates the good classifier from the bad one. Finally, optimization refers to the method which allows the learning of the model.
 
-![The three components of learning algorithms.](../assets/1/Table-1.png)
+![The three components of learning algorithms.](../assets/Papers/1/Table-1.png)
 
 ## It’s Generalization that Counts
 
@@ -30,7 +30,7 @@ Machine Learning is an inductive process. It learns the representations with man
 
 When the knowledge and the data is not sufficient to train a complete model, the model might hallucinate traits and might not generalize properly. This leads to overfitting. The generalization error can be decomposed into bias and variance. Bias is the learner's tendency to consistently learn the wrong thing. Variance is the tendency to learn random things irrespective of real signal. Few solutions to overfitting include cross validation, regularization, dropout, etc.
 
-![Bias and Variance.](../assets/1/Table-2.png)
+![Bias and Variance.](../assets/Papers/1/Table-2.png)
 
 ## Intuition Fails in High Dimensions
 
@@ -53,7 +53,7 @@ practice they may not, because of limitations of the algorithm such as falling i
 learners can produce widely different frontiers while still making the same
 predictions in the regions that matter.
 
-![Very different frontiers can yield similar predictions.](../assets/1/Table-3.png)
+![Very different frontiers can yield similar predictions.](../assets/Papers/1/Table-3.png)
 
 
 ## Simplicity Does Not Imply Accuracy
