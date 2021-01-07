@@ -35,7 +35,8 @@ Machine Learning is an inductive process. It learns the representations with man
 
 When the knowledge and the data is not sufficient to train a complete model, the model might hallucinate traits and might not generalize properly. This leads to overfitting. The generalization error can be decomposed into bias and variance. Bias is the learner's tendency to consistently learn the wrong thing. Variance is the tendency to learn random things irrespective of real signal. Few solutions to overfitting include cross validation, regularization, dropout, etc.
 <p align="center">
-Bias and Variance.</p>
+<b>Bias and Variance.</b>
+</p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Figure-2.png?raw=true" alt="Figure 2"/>
 </p>
@@ -62,7 +63,8 @@ learners can produce widely different frontiers while still making the same
 predictions in the regions that matter.
 
 <p align="center">
-Very different frontiers can yield similar predictions.</p>
+<b>Very different frontiers can yield similar predictions.</b>
+</p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/1/Figure-3.png?raw=true" alt="Figure 3"/>
 </p>
