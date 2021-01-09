@@ -4,14 +4,14 @@ title: Deep Learning- Introduction
 published: true
 ---
 
-An overview of the chapter “[Introduction](https://www.deeplearningbook.org/)” from the famous Deep Learning book written by Ian Goodfellow, Yoshua Bengio and Aaron Courville.
+An overview of the chapter “[Introduction](https://www.deeplearningbook.org/contents/intro.html)” from the famous Deep Learning book written by Ian Goodfellow, Yoshua Bengio and Aaron Courville.
 <!--break-->
 The authors create a brief introduction of the important concepts that guide machine learning. All images and tables in this post are from their book.
 
 ## Introduction
 
 AI needs immense amount of knowledge about the world. This can be provided through:
-* Knowledge base (Cyc): An inference engine and a database of statements in a language called CycL. These statements are entered by human supervisors. The main limitation is that people ourselves, struggle to devise formal rules with enough complexity to accurately describe the world.
+* <b>Knowledge base (Cyc)</b>: An inference engine and a database of statements in a language called CycL. These statements are entered by human supervisors. The main limitation is that people ourselves, struggle to devise formal rules with enough complexity to accurately describe the world.
 * Machine Learning: THe systems have the ability to acquire their own knowledge by extracting patterns from raw data. However, the performance of these models depend heavily on the representation of the data they are given. Each piece of information is known as a feature. These are systems which map representations to output.
 * Representation Learning: These systems learn the representations as well. For example, autoencoders. While designing features or algorithms for learning features, our goal is usually to separate the factors of variation that explain the observed data. Such factors are often not directly observed. Most applications require us to disentangle the factors of variation and discard the ones we do not care about. When it is nearly as difficult to obtain a representation as to solve the original problem, representation learning does not, at first glance, seem to help us.
 * Deep Learning: This solves the central problem of representation learning by introducing representations that are expressed in terms of other, simpler representations. For example, MLP
