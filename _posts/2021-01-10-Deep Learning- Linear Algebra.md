@@ -160,3 +160,32 @@ The matrices <img src="https://latex.codecogs.com/svg.latex?U" title="U" />  and
 Furthermore, the left-singular vectors of <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> are the eigenvectors of <img src="https://latex.codecogs.com/svg.latex?AA^T" title="AA^T" />, whereas the right-singular vectors of <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> are the eigenvectors of <img src="https://latex.codecogs.com/svg.latex?A^TA" title="A^TA" />.
 
 ## Moore Penrose Pseudoinverse
+
+Matrix inversion is not defined for matrices that are not square. Suppose <img src="https://latex.codecogs.com/svg.latex?A&space;\in&space;\mathbb{R}^{m*n}" title="A \in \mathbb{R}^{m*n}" />, if:
+* <img src="https://latex.codecogs.com/svg.latex?m>n" title="m>n" />, no solutions of <img src="https://latex.codecogs.com/svg.latex?Ax&space;=&space;y" title="Ax = y" />
+* <img src="https://latex.codecogs.com/svg.latex?n>m" title="n>m" />, multiple solutions of <img src="https://latex.codecogs.com/svg.latex?Ax&space;=&space;y" title="Ax = y" />
+
+The <b>Moore-Penrose pseudoinverse</b> of <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> is defined as a matrix <img src="https://latex.codecogs.com/svg.latex?A^{&plus;}&space;=&space;VD^{&plus;}U^{T}" title="A^{+} = VD^{+}U^{T}" />, where <img src="https://latex.codecogs.com/svg.latex?U" title="U" />, <img src="https://latex.codecogs.com/svg.latex?D" title="D" />, and <img src="https://latex.codecogs.com/svg.latex?V" title="V" /> are the singular value decomposition of <img src="https://latex.codecogs.com/svg.latex?A" title="A" />. <img src="https://latex.codecogs.com/svg.latex?D^{&plus;}" title="D^{+}" /> is obtained by taking the reciprocal of its non-zero elements, then taking the transpose of the resulting matrix.
+When <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> has more columns than rows, then solving a linear equation using the pseudoinverse provides one of the many possible solutions. Specifically, it provides the solution <img src="https://latex.codecogs.com/svg.latex?x&space;=&space;A^{&plus;}y" title="x = A^{+}y" /> with minimal Eucledian norm <img src="https://latex.codecogs.com/svg.latex?\left&space;\|&space;x&space;\right&space;\|_2" title="\left \| x \right \|_2" /> among all possible solutions.
+When <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> has more rows than columns, it is possible for there to be no solution. In this case, using the pseudoinverse gives us the <img src="https://latex.codecogs.com/svg.latex?x" title="x" /> for which <img src="https://latex.codecogs.com/svg.latex?Ax" title="Ax" /> is as close as possible to <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> in terms of Eucledian norm <img src="https://latex.codecogs.com/svg.latex?\left&space;\|&space;Ax-y&space;\right&space;\|_2" title="\left \| Ax-y \right \|_2" />
+
+## The Trace Operator
+
+The trace operator gives the sum of all the diagonal entries of a matrix:
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?Tr(A)&space;=&space;\sum&space;_iA_{i,i}" title="Tr(A) = \sum _iA_{i,i}" />
+</p>
+The trace operator provides an alternative way of writing the Frobenius norm of a matrix: <img src="https://latex.codecogs.com/svg.latex?\left&space;\|&space;A&space;\right&space;\|_F&space;=&space;\sqrt{Tr(AA^T)}" title="\left \| A \right \|_F = \sqrt{Tr(AA^T)}" />.
+Furthermore, the trace operator is invariant to the transpose operator: <img src="https://latex.codecogs.com/svg.latex?Tr(A)&space;=&space;Tr(A^T)" title="Tr(A) = Tr(A^T)" />.
+Also, the trace operator is invariant to cyclic permutations, even if the output is of a different shape: <img src="https://latex.codecogs.com/svg.latex?Tr(ABC)&space;=&space;Tr(BCA)&space;=&space;Tr(CAB)" title="Tr(ABC) = Tr(BCA) = Tr(CAB)" />.
+
+## The Determinant
+
+The determinant of a square matrix, denoted by <img src="https://latex.codecogs.com/svg.latex?det(A)" title="det(A)" />, is a function mapping matrices to real scalars. The determinant is equal to the product of all the eigenvalues of the matrix.
+The absolute value of the determinant can be thought of as a measure of how much multiplication by the matrix expands or contracts space.
+If the determinant is 0, the space is contracted completely along at least one dimension, causing it to lose all of its volume. If the determinant is 1, then the transformation preserves volume.
+
+## Principal Component Analysis
+
+Principal component analysis, or PCA, is a technique widely used for applications such as dimensionality reduction, lossy data compression, feature extraction and data visualization. PCA can be defined as the orthogonal projection of the data onto a lower dimensional linear space, known as the principal subspace, such that the variance of the projected data is maximized. These lower dimensional linear space is obtained from the eigenvectors derived from eigendecomposition of the data.
+Equivalently, it can also be defined as the linear projection that minimizer the average projection cost, defined as the mean squared distance between the data points and their projections.
