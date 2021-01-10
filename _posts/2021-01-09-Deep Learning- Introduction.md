@@ -26,7 +26,9 @@ AI needs immense amount of knowledge about the world. This can be provided throu
   * <b>McCullochs-Pitts Neuron:</b> An early model of brain function. Recognize different categories by testing whether <img src="https://latex.codecogs.com/svg.latex?f(x,w)" title="f(x,w)" /> is positive or negative. Of course, for the model to correspond to the desired definition of the categories, the weights needed to be set correctly. These weights could be set by the human operator.
   * <b>Perceptron:</b> The first model that could learn the weights defining the categories given examples of inputs. Used Stochastic Gradient Descent.
   * <b>Adaptive Linear Elementt (Adaline):</b> Returns the value of <img src="https://latex.codecogs.com/svg.latex?f(x)" title="f(x)" /> itself to predict a real numbers from the data. Uses a slight modification of the Stochastic Gradient Descent.
+
 Perceptron and Adaline are  linear models, and are not capable of learning XOR functions.
+
 ### Connectionism
 This includes the introduction of neural networks. The central idea in connectionism is that a large number of simplee computational units can achieve intelligent behavior when networked together. Key concept from this era includes the distributed representation. This is the idea that each input to a system should be represented by many features, and each feature should be involved in the representation of many possible inputs. This was also the era where backpropagation was popularized and successfully used with deep neural networks. Progess was also made in modeling sequences with neural networks and introduced the LSTM (long short-term memory) networks. Due to unrealistic expectations from investors, difficulties in training, followed by introduction of kernel machines and graphical models, the popularity of neural networks declined.
 ### Deep Learning
