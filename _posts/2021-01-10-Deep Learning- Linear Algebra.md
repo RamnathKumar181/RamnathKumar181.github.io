@@ -13,15 +13,15 @@ The authors create a brief introduction of the important concepts of linear alge
 The study of linear algebra involves several types of mathematical objects:
 * <b>Scalars:</b> A single number. For example,  
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;n&space;=&space;10" title="n = 10" />
+<img src="https://latex.codecogs.com/svg.latex?n&space;=&space;10" title="n = 10" />
 </p>
 * <b>Vectors:</b> An array of numbers. For example,
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;x&space;=&space;\begin{bmatrix}&space;x_0&space;\\&space;x_1&space;\\&space;.&space;\\&space;.&space;\\&space;.&space;\\&space;x_n&space;\end{bmatrix}" title="x = \begin{bmatrix} x_0 \\ x_1 \\ . \\ . \\ . \\ x_n \end{bmatrix}" />
+<img src="https://latex.codecogs.com/svg.latex?x&space;=&space;\begin{bmatrix}&space;x_0&space;\\&space;x_1&space;\\&space;.&space;\\&space;.&space;\\&space;.&space;\\&space;x_n&space;\end{bmatrix}" title="x = \begin{bmatrix} x_0 \\ x_1 \\ . \\ . \\ . \\ x_n \end{bmatrix}" />
 </p>To access elements 1 and 3 in array, we set <img src="https://latex.codecogs.com/svg.latex?\inline&space;S&space;=&space;\begin{Bmatrix}&space;1,3&space;\end{Bmatrix}" title="S = \begin{Bmatrix} 1,3 \end{Bmatrix}" /> and use <img src="https://latex.codecogs.com/svg.latex?\inline&space;x_S" title="x_S" />. To get all elemets other than 1 and 3, we use <img src="https://latex.codecogs.com/svg.latex?\inline&space;x_{-S}" title="x_{-S}" />
 * <b>Matrices:</b> 2-D array of numbers. For example,
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A&space;=&space;\begin{bmatrix}&space;x_{1,1}&space;&&space;x_{1,2}\\&space;x_{2,1}&space;&&space;x_{2,2}&space;\end{bmatrix}" title="A = \begin{bmatrix} x_{1,1} & x_{1,2}\\ x_{2,1} & x_{2,2} \end{bmatrix}" />
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}&space;x_{1,1}&space;&&space;x_{1,2}\\&space;x_{2,1}&space;&&space;x_{2,2}&space;\end{bmatrix}" title="A = \begin{bmatrix} x_{1,1} & x_{1,2}\\ x_{2,1} & x_{2,2} \end{bmatrix}" />
 </p>
 * <b>Tensors:</b> more than 2-D array. For example, <img src="https://latex.codecogs.com/svg.latex?\inline&space;A_{i,j,k}" title="A_{i,j,k}" />
 
@@ -34,17 +34,17 @@ The implicit copying of b across each row is called broadcasting.
 
 * <b>Matrix Multiplication:</b>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;C_{m*p}&space;=&space;A_{m*n}B_{n*p}" title="C_{m*p} = A_{m*n}B_{n*p}" />
+<img src="https://latex.codecogs.com/svg.latex?C_{m*p}&space;=&space;A_{m*n}B_{n*p}" title="C_{m*p} = A_{m*n}B_{n*p}" />
 </p>
 where, <img src="https://latex.codecogs.com/svg.latex?\inline&space;C_{i,j}&space;=&space;\sum&space;_{k}&space;A_{i,k}B_{k,j}" title="C_{i,j} = \sum _{k} A_{i,k}B_{k,j}" />.
 * <b>Element wise product or Hadard product:</b>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;C&space;=&space;A\odot&space;B" title="C = A\odot B" />
+<img src="https://latex.codecogs.com/svg.latex?C&space;=&space;A\odot&space;B" title="C = A\odot B" />
 </p>
 where, <img src="https://latex.codecogs.com/svg.latex?\inline&space;C_{i,j}&space;=&space;A_{i,j}*B_{i,j}" title="C_{i,j} = A_{i,j}*B_{i,j}" />.
 * <b>Dot product:</b> Product of two vectors of same dimensionality.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;x\cdot&space;y&space;=&space;x^Ty" title="x\cdot y = x^Ty" />
+<img src="https://latex.codecogs.com/svg.latex?x\cdot&space;y&space;=&space;x^Ty" title="x\cdot y = x^Ty" />
 </p>
 
 Matrix multiplication is associative (<img src="https://latex.codecogs.com/svg.latex?\inline&space;A(BC)&space;=&space;(AB)C" title="A(BC) = (AB)C" />), distributive (<img src="https://latex.codecogs.com/svg.latex?\inline&space;A(B&plus;C)&space;=&space;AB&space;&plus;&space;AC" title="A(B+C) = AB + AC" />) but not commutative (<img src="https://latex.codecogs.com/svg.latex?\inline&space;AB&space;\neq&space;BA" title="AB \neq BA" />). However, the commutative property holds for vector product (<img src="https://latex.codecogs.com/svg.latex?\inline&space;x^Ty&space;=&space;y^Tx" title="x^Ty = y^Tx" />).
@@ -56,14 +56,14 @@ Also, note that <img src="https://latex.codecogs.com/svg.latex?\inline&space;(AB
 Linear algebra offers a powerful tool called matrix inversion, that allows us to analytically solve equation <img src="https://latex.codecogs.com/svg.latex?\inline&space;Ax&space;=&space;b" title="Ax = b" /> for many values of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />.
 We denote the identity matrix that preserves n-dimensional vectors as <img src="https://latex.codecogs.com/svg.latex?\inline&space;I_{n}\in&space;\mathbb{R}^{n*n}" title="I_{n}\in \mathbb{R}^{n*n}" />, and
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;AA^{-1}=&space;I" title="AA^{-1}= I" />
+<img src="https://latex.codecogs.com/svg.latex?AA^{-1}=&space;I" title="AA^{-1}= I" />
 </p>
 where <img src="https://latex.codecogs.com/svg.latex?\inline&space;A^{-1}" title="A^{-1}" /> is inverse of A. Also note that, <img src="https://latex.codecogs.com/svg.latex?\inline&space;I_{n}x&space;=&space;x" title="I_{n}x = x" />.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Ax&space;=&space;b" title="Ax = b" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A^{-1}Ax&space;=&space;A^{-1}b" title="A^{-1}Ax = A^{-1}b" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;I_{n}x&space;=&space;A^{-1}b" title="I_{n}x = A^{-1}b" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;x&space;=&space;A^{-1}b" title="x = A^{-1}b" />
+<img src="https://latex.codecogs.com/svg.latex?Ax&space;=&space;b" title="Ax = b" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?A^{-1}Ax&space;=&space;A^{-1}b" title="A^{-1}Ax = A^{-1}b" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?I_{n}x&space;=&space;A^{-1}b" title="I_{n}x = A^{-1}b" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?x&space;=&space;A^{-1}b" title="x = A^{-1}b" /><br>
 </p>
 Note that <img src="https://latex.codecogs.com/svg.latex?\inline&space;x&space;=&space;A^{-1}b" title="x = A^{-1}b" /> might or might not exist depending on the existence of inverse of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />.
 
@@ -73,7 +73,7 @@ Suppose <img src="https://latex.codecogs.com/svg.latex?\inline&space;Ax&space;=&
 
 Formally, a linear combination of some set of vectors <img src="https://latex.codecogs.com/svg.latex?\inline&space;\begin{Bmatrix}&space;v^{(1)}&space;,...&space;,&space;v^{(n)}&space;\end{Bmatrix}" title="\begin{Bmatrix} v^{(1)} ,... , v^{(n)} \end{Bmatrix}" /> is given by multiplying each vector <img src="https://latex.codecogs.com/svg.latex?\inline&space;v^{(i)}" title="v^{(i)}" /> by a corresponding scalar coefficient and adding the results:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\sum&space;_{i}c_{i}v^{(i)}" title="\sum _{i}c_{i}v^{(i)}" />
+<img src="https://latex.codecogs.com/svg.latex?\sum&space;_{i}c_{i}v^{(i)}" title="\sum _{i}c_{i}v^{(i)}" />
 </p>
 The <b>span</b> of a set of vectors is the set of all points obtainable by linear combination of the original vectors. Determining whether <img src="https://latex.codecogs.com/svg.latex?\inline&space;Ax&space;=&space;b" title="Ax = b" /> has a solution amounts to testing whether <img src="https://latex.codecogs.com/svg.latex?\inline&space;b" title="b" /> is in the span of columns of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />, aka column space or range of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />
 In order for the system <img src="https://latex.codecogs.com/svg.latex?\inline&space;Ax&space;=&space;b" title="Ax = b" /> to have a solution for all values of <img src="https://latex.codecogs.com/svg.latex?\inline&space;b&space;\in&space;\mathbb{R}^{m}" title="b \in \mathbb{R}^{m}" />, we therefore require that the column space of A be all of <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{R}^{m}" title="\mathbb{R}^{m}" />. If any point in <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{R}^{m}" title="\mathbb{R}^{m}" /> is excluded from th column space, that point is a potential value of <img src="https://latex.codecogs.com/svg.latex?\inline&space;b" title="b" /> that has no solution. The requirement that the column space of A be all of <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{R}^{m}" title="\mathbb{R}^{m}" />  implies immediately that <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> must have at least <img src="https://latex.codecogs.com/svg.latex?\inline&space;m" title="m" /> columns, i.e., <img src="https://latex.codecogs.com/svg.latex?\inline&space;n\geq&space;m" title="n\geq m" />. Having <img src="https://latex.codecogs.com/svg.latex?\inline&space;n\geq&space;m" title="n\geq m" /> is only a necessary condition for every point to have a solution, It is not however sufficient condition since, it is possible for some of the columns to be redundant.
@@ -86,7 +86,7 @@ Together, this means that the matrix must be a square, that is, we require that 
 
 Norms are used to measure the size of a vector. Formally, the <img src="https://latex.codecogs.com/svg.latex?\inline&space;L^{p}" title="L^{p}" /> norm is given by:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\left&space;\|&space;x&space;\right&space;\|_{p}&space;=&space;\left&space;(&space;\sum&space;_i\left&space;|&space;x_i&space;\right&space;|^{p}&space;\right&space;)^{\frac{1}{p}}" title="\left \| x \right \|_{p} = \left ( \sum _i\left | x_i \right |^{p} \right )^{\frac{1}{p}}" />
+<img src="https://latex.codecogs.com/svg.latex?\left&space;\|&space;x&space;\right&space;\|_{p}&space;=&space;\left&space;(&space;\sum&space;_i\left&space;|&space;x_i&space;\right&space;|^{p}&space;\right&space;)^{\frac{1}{p}}" title="\left \| x \right \|_{p} = \left ( \sum _i\left | x_i \right |^{p} \right )^{\frac{1}{p}}" />
 </p>
 for <img src="https://latex.codecogs.com/svg.latex?\inline&space;p&space;\in&space;\mathbb{R}" title="p \in \mathbb{R}" />, <img src="https://latex.codecogs.com/svg.latex?\inline&space;p&space;\geq&space;1" title="p \geq 1" />.
 Norm must follow 3 conditions:
@@ -100,20 +100,20 @@ We sometimes measure the size of the vector by counting its number of nonzero el
 One other norm is the max norm or <img src="https://latex.codecogs.com/svg.latex?\inline&space;L^\infty" title="L^\infty" /> which can be simplifies to the absolute value of the element with the largest magnitude in the vector, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\left&space;\|&space;x&space;\right&space;\|_{\infty}&space;=&space;\max_{i}&space;\left&space;|&space;x_i&space;\right&space;|" title="\left \| x \right \|_{\infty} = \max_{i} \left | x_i \right |" />.
 Sometimes, we also wish to measure the size of a matrix. In the context of deep learning, the most common way to do this is with the otherwise obscure <b>Frobenius norm</b>:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\left&space;\|&space;A&space;\right&space;\|_F&space;=&space;\sqrt{\sum&space;_{i,j}A_{i,j}^2}" title="\left \| A \right \|_F = \sqrt{\sum _{i,j}A_{i,j}^2}" />
+<img src="https://latex.codecogs.com/svg.latex?\left&space;\|&space;A&space;\right&space;\|_F&space;=&space;\sqrt{\sum&space;_{i,j}A_{i,j}^2}" title="\left \| A \right \|_F = \sqrt{\sum _{i,j}A_{i,j}^2}" />
 </p>
 which is similar to <img src="https://latex.codecogs.com/svg.latex?\inline&space;L^2" title="L^2" /> norm of vectors, but for matrices.
 
 Furthermore, the dot product of two vectors can be rewritten in terms of norms. Specifically,
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;x^Ty&space;=&space;\left&space;\|&space;x&space;\right&space;\|_2\left&space;\|&space;y&space;\right&space;\|_2\cos\theta" title="x^Ty = \left \| x \right \|_2\left \| y \right \|_2\cos\theta" />
+<img src="https://latex.codecogs.com/svg.latex?x^Ty&space;=&space;\left&space;\|&space;x&space;\right&space;\|_2\left&space;\|&space;y&space;\right&space;\|_2\cos\theta" title="x^Ty = \left \| x \right \|_2\left \| y \right \|_2\cos\theta" />
 </p>
 
 ## Special Kinds of matrices and Vectors
 
 * <b>Diagonal Matrix:</b>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;D_{ij}&space;=&space;\left\{\begin{matrix}&space;1&space;&,&space;i=j&space;\\&space;0&space;&,&space;otherwise&space;\end{matrix}\right." title="D_{ij} = \left\{\begin{matrix} 1 &, i=j \\ 0 &, otherwise \end{matrix}\right." />
+<img src="https://latex.codecogs.com/svg.latex?D_{ij}&space;=&space;\left\{\begin{matrix}&space;1&space;&,&space;i=j&space;\\&space;0&space;&,&space;otherwise&space;\end{matrix}\right." title="D_{ij} = \left\{\begin{matrix} 1 &, i=j \\ 0 &, otherwise \end{matrix}\right." />
 </p>
 We write <img src="https://latex.codecogs.com/svg.latex?\inline&space;diag(V)" title="diag(V)" /> to denote a square diagonal matrix whose diagonal entries are given by the entries of vector <img src="https://latex.codecogs.com/svg.latex?\inline&space;V" title="V" />. To compute <img src="https://latex.codecogs.com/svg.latex?\inline&space;diag(V)x" title="diag(V)x" />, we only need to scale each element <img src="https://latex.codecogs.com/svg.latex?\inline&space;x_i" title="x_i" /> by <img src="https://latex.codecogs.com/svg.latex?\inline&space;v_i" title="v_i" />. Not all diagonal matrices need be square. It is possible to construct a rectangular diagonal matrix.
 * <b>Symmetric Matrix:</b> Matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> is said to be symmetric if <img src="https://latex.codecogs.com/svg.latex?\inline&space;A^T=A" title="A^T=A" />, or <img src="https://latex.codecogs.com/svg.latex?\inline&space;A_{i,j}&space;=&space;A_{j,i}" title="A_{i,j} = A_{j,i}" />.
@@ -125,14 +125,14 @@ We write <img src="https://latex.codecogs.com/svg.latex?\inline&space;diag(V)" t
 
 This is a matrix decomposition method in which we decompose a matrix into a set of eigenvectors and eigenvalues.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A\upsilon&space;=&space;\lambda&space;\upsilon" title="A\upsilon = \lambda \upsilon" />
+<img src="https://latex.codecogs.com/svg.latex?A\upsilon&space;=&space;\lambda&space;\upsilon" title="A\upsilon = \lambda \upsilon" />
 </p>
 Here, <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> is a square matrix, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\upsilon" title="\upsilon" /> is the eigenvector and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\lambda" title="\lambda" /> is the eigenvalue.
 If <img src="https://latex.codecogs.com/svg.latex?\inline&space;\upsilon" title="\upsilon" /> is an eigen vector, so is any rescaled vector <img src="https://latex.codecogs.com/svg.latex?\inline&space;s\upsilon" title="s\upsilon" /> where <img src="https://latex.codecogs.com/svg.latex?\inline&space;s&space;\neq&space;0" title="s \neq 0" />. Hence, we only consider unit vectors. Suppose that a matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> has <img src="https://latex.codecogs.com/svg.latex?\inline&space;n" title="n" /> linearly independent eigenvectors, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\begin{Bmatrix}&space;\upsilon&space;^{(1)},&space;...,&space;\upsilon^{(n)}&space;\end{Bmatrix}" title="\begin{Bmatrix} \upsilon ^{(1)}, ..., \upsilon^{(n)} \end{Bmatrix}" />, with corresponding eigenvalues <img src="https://latex.codecogs.com/svg.latex?\inline&space;\begin{Bmatrix}&space;\lambda&space;^{(1)},&space;...,&space;\lambda&space;^{(n)}&space;\end{Bmatrix}" title="\begin{Bmatrix} \lambda ^{(1)}, ..., \lambda ^{(n)} \end{Bmatrix}" />. We may concatenate all of the eigenvectors to form a matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;V" title="V" /> with one eigenvector per column: <img src="https://latex.codecogs.com/svg.latex?\inline&space;V&space;=&space;\begin{bmatrix}&space;\upsilon&space;^{(1)},&space;...,&space;\upsilon^{(n)}&space;\end{bmatrix}" title="V = \begin{bmatrix} \upsilon ^{(1)}, ..., \upsilon^{(n)} \end{bmatrix}" />. Likewise, we concatenate the eigenvalues to form a vector <img src="https://latex.codecogs.com/svg.latex?\inline&space;\boldsymbol{\lambda}=&space;\begin{bmatrix}&space;\lambda&space;\upsilon&space;^{(1)},&space;...,&space;\lambda&space;\upsilon^{(n)}&space;\end{bmatrix}" title="\boldsymbol{\lambda}= \begin{bmatrix} \lambda \upsilon ^{(1)}, ..., \lambda \upsilon^{(n)} \end{bmatrix}" />. The <b>eigendecomposition</b> of A is then given by <img src="https://latex.codecogs.com/svg.latex?\inline&space;A&space;=&space;Vdiag(\boldsymbol{\lambda})V^{-1}" title="A = Vdiag(\boldsymbol{\lambda})V^{-1}" />.
 We have seen that constructing matrices with specific eigenvalues and eigenvectors allows us to stretch space in desired directions. However, we often want to decompose matrices into their eigenvalues and eigenvectors.
 Not every matrix can be decomposed into eigenvalues and eigenvectors. However, every real symmetric matrix can be decomposed into an expression using only real-valued eigenvectors and eigenvalues:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A&space;=&space;Q&space;\wedge&space;Q^T" title="A = Q \wedge Q^T" />
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;Q&space;\wedge&space;Q^T" title="A = Q \wedge Q^T" />
 </p>
 where <img src="https://latex.codecogs.com/svg.latex?\inline&space;Q" title="Q" /> is an orthogonal matrix composed of eigenvectors of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />, and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\wedge" title="\wedge" /> is a diagonal matrix.
 While any real symmetric matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> is guaranteed to have an eigendecomposition, the eigendecomposition may not be unique. If any two or more eigenvectors share the same eigenvalue, then any set of orthogonal vectors lying in their span are also eigenvectors with that eigenvalue. By convention, we usually sort the entries of <img src="https://latex.codecogs.com/svg.latex?\inline&space;\wedge" title="\wedge" /> in descending order. Under this convention, the eigendecomposition is unique only if all of the eigenvalues are unique.
@@ -140,7 +140,7 @@ While any real symmetric matrix <img src="https://latex.codecogs.com/svg.latex?\
 The eigendecomposition of a matrix tells us many useful facts about the matrix. The matrix is singular if and only if any of the eigenvalues are zero.
 The eigendecomposition of a real symmetric matrix can also be used to optimize quadratic expressions of the form <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)&space;=&space;x^TAx" title="f(x) = x^TAx" /> subject to <img src="https://latex.codecogs.com/svg.latex?\inline&space;\left&space;\|&space;x&space;\right&space;\|_2&space;=&space;1" title="\left \| x \right \|_2 = 1" />. Whenever, <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> is equal to an eigenvector of <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />, <img src="https://latex.codecogs.com/svg.latex?\inline&space;f" title="f" /> taks on the value of corresponding eigenvalue, since:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A&space;=&space;Q&space;\wedge&space;Q^T&space;\Leftrightarrow&space;\wedge&space;=&space;Q^TAQ" title="A = Q \wedge Q^T \Leftrightarrow \wedge = Q^TAQ" />
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;Q&space;\wedge&space;Q^T&space;\Leftrightarrow&space;\wedge&space;=&space;Q^TAQ" title="A = Q \wedge Q^T \Leftrightarrow \wedge = Q^TAQ" />
 </p>
 since <img src="https://latex.codecogs.com/svg.latex?\inline&space;Q" title="Q" /> is orthogonal and <img src="https://latex.codecogs.com/svg.latex?\inline&space;Q^{-1}&space;=&space;Q^T" title="Q^{-1} = Q^T" />.
 A matrix whose eigenvalues are all positive is called <b>positive definite</b>. A matrix whose eigenvalues are all positive or zero-valued is called <b>positive semidefinite</b>. Likewise, if all eigenvalues are negative, the matrix is <b>negative definite</b>, and if all eigenvalues are negative or zero valued, it is <b>negative semidefinite</b>.
@@ -152,7 +152,7 @@ Positive semidefinite matrices are interesting for two reasons:
 
 This is another method to factorize a matrix, into singular vectors and singular values. This is more generally applicable. Every real matrix has a SVD, but the same is not true for eigen decomposition. Here, we write <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> in terms of three matrices:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;A=UDV^T" title="A=UDV^T" />
+<img src="https://latex.codecogs.com/svg.latex?A=UDV^T" title="A=UDV^T" />
 </p>
 Here, <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /> is a <img src="https://latex.codecogs.com/svg.latex?\inline&space;m&space;*&space;n" title="m * n" /> matrix, <img src="https://latex.codecogs.com/svg.latex?\inline&space;U" title="U" /> is defined to be a <img src="https://latex.codecogs.com/svg.latex?\inline&space;m*m" title="m*m" /> matrix, <img src="https://latex.codecogs.com/svg.latex?\inline&space;D" title="D" /> to be a <img src="https://latex.codecogs.com/svg.latex?\inline&space;m*n" title="m*n" /> matrix, and <img src="https://latex.codecogs.com/svg.latex?\inline&space;V" title="V" /> to be a <img src="https://latex.codecogs.com/svg.latex?\inline&space;n*n" title="n*n" /> matrix.
 The matrices <img src="https://latex.codecogs.com/svg.latex?\inline&space;U" title="U" />  and <img src="https://latex.codecogs.com/svg.latex?\inline&space;V" title="V" /> are both defined to be orthogonal matrices. The matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;D" title="D" /> is defined to be a diagonal matrix (not necessarily a square). The elements across the diagonal of <img src="https://latex.codecogs.com/svg.latex?\inline&space;D" title="D" /> are known as the <b>singular values</b> of the matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" />. The columns of <img src="https://latex.codecogs.com/svg.latex?\inline&space;U" title="U" /> are known as <b>left-singular vectors</b>. The columns of <img src="https://latex.codecogs.com/svg.latex?\inline&space;V" title="V" /> are known as the <b>right-singular vectors</b>.
@@ -173,7 +173,7 @@ When <img src="https://latex.codecogs.com/svg.latex?\inline&space;A" title="A" /
 
 The trace operator gives the sum of all the diagonal entries of a matrix:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Tr(A)&space;=&space;\sum&space;_iA_{i,i}" title="Tr(A) = \sum _iA_{i,i}" />
+<img src="https://latex.codecogs.com/svg.latex?Tr(A)&space;=&space;\sum&space;_iA_{i,i}" title="Tr(A) = \sum _iA_{i,i}" />
 </p>
 The trace operator provides an alternative way of writing the Frobenius norm of a matrix: <img src="https://latex.codecogs.com/svg.latex?\inline&space;\left&space;\|&space;A&space;\right&space;\|_F&space;=&space;\sqrt{Tr(AA^T)}" title="\left \| A \right \|_F = \sqrt{Tr(AA^T)}" />.
 Furthermore, the trace operator is invariant to the transpose operator: <img src="https://latex.codecogs.com/svg.latex?\inline&space;Tr(A)&space;=&space;Tr(A^T)" title="Tr(A) = Tr(A^T)" />.

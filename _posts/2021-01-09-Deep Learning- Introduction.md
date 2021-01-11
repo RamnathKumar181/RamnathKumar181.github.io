@@ -19,7 +19,7 @@ AI needs immense amount of knowledge about the world. This can be provided throu
 ## Historical Trends in DL
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Cybernetics&space;\rightarrow&space;Connectionism&space;\rightarrow&space;Deep\&space;Learning" title="Cybernetics \rightarrow Connectionism \rightarrow Deep\ Learning" />
+<img src="https://latex.codecogs.com/svg.latex?Cybernetics&space;\rightarrow&space;Connectionism&space;\rightarrow&space;Deep\&space;Learning" title="Cybernetics \rightarrow Connectionism \rightarrow Deep\ Learning" />
 </p>
 ### Cybernetics
 <img src="https://latex.codecogs.com/svg.latex?\inline&space;(x_1,&space;x_2,...,&space;x_n)&space;\rightarrow&space;y" title="(x_1, x_2,..., x_n) \rightarrow y" />. These models would learn a set of weights <img src="https://latex.codecogs.com/svg.latex?\inline&space;(w_1,&space;w_2,...,&space;w_n)" title="(w_1, w_2,..., w_n)" /> and compute their output <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x,w)&space;=&space;x_1w_1&space;&plus;&space;x_2w_2&space;&plus;&space;...&space;&plus;&space;x_nw_n" title="f(x,w) = x_1w_1 + x_2w_2 + ... + x_nw_n" />.
