@@ -125,10 +125,10 @@ The <b>covariance matrix</b> of a random vector <img src="https://latex.codecogs
 The bernoulli distribution is a distribution over a single binary random variable.
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?P(x=1)&space;=&space;\Phi" title="P(x=1) = \Phi" /> <br>
-<img src="https://latex.codecogs.com/svg.latex?P(x=0)&space;=&space;1-\Phi" title="P(x=0) = 1-\Phi" />
-<img src="https://latex.codecogs.com/svg.latex?P(x)&space;=&space;\Phi^x(1-\Phi)^{1-x}" title="P(x) = \Phi^x(1-\Phi)^{1-x}" />
-<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\Phi" title="E_x[x] = \Phi" />
-<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\Phi(1-\Phi)" title="Var_x(x) = \Phi(1-\Phi)" />
+<img src="https://latex.codecogs.com/svg.latex?P(x=0)&space;=&space;1-\Phi" title="P(x=0) = 1-\Phi" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?P(x)&space;=&space;\Phi^x(1-\Phi)^{1-x}" title="P(x) = \Phi^x(1-\Phi)^{1-x}" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\Phi" title="E_x[x] = \Phi" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\Phi(1-\Phi)" title="Var_x(x) = \Phi(1-\Phi)" /> <br>
 </p>
 
 ### Multinomial Distribution
@@ -142,9 +142,9 @@ THe mulitnomial distribution is a distribution over a single discrete variable w
 
 The most commonly used distribution over real numbers is the normal distribution, also known as the gaussian distribution.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?N(x;\mu&space;,\sigma&space;^2)&space;=&space;\frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" title="N(x;\mu ,\sigma ^2) = \frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" />
-<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\mu" title="E_x[x] = \mu" />
-<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\sigma^2" title="Var_x(x) = \sigma^2" />
+<img src="https://latex.codecogs.com/svg.latex?N(x;\mu&space;,\sigma&space;^2)&space;=&space;\frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" title="N(x;\mu ,\sigma ^2) = \frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\mu" title="E_x[x] = \mu" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\sigma^2" title="Var_x(x) = \sigma^2" /> <br>
 </p>
 When we need to frequently evaluate the PDF with different parameter values, a more efficient way parametrizing the distribution is to use a parameter <img src="https://latex.codecogs.com/svg.latex?\inline&space;\beta" title="\beta" /> to control the <b>precision</b> or inverse variance of the distribution, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\beta&space;=&space;\sigma^{-2}" title="\beta = \sigma^{-2}" />
 
@@ -218,14 +218,14 @@ The name of softplus function comes from the fact that it is a smoothed or "soft
 </p>
 The following properties are all useful enough to memorize:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\sigma&space;(x)&space;=&space;\frac{\exp(x)}{\exp(x)&plus;\exp(0)}" title="\sigma (x) = \frac{\exp(x)}{\exp(x)+\exp(0)}" />
-<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}}{\mathrm{d}&space;x}&space;\sigma(x)&space;=&space;\sigma(x)(1-\sigma(x))" title="\frac{\mathrm{d}}{\mathrm{d} x} \sigma(x) = \sigma(x)(1-\sigma(x))" />
-<img src="https://latex.codecogs.com/svg.latex?1-\sigma(x)&space;=&space;\sigma(-x)" title="1-\sigma(x) = \sigma(-x)" />
-<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}\zeta&space;(x)&space;=&space;\sigma(x)" title="\frac{\mathrm{d} }{\mathrm{d} x}\zeta (x) = \sigma(x)" />
-<img src="https://latex.codecogs.com/svg.latex?\sigma^{-1}(x)&space;=&space;\log(\frac{x}{1-x})" title="\sigma^{-1}(x) = \log(\frac{x}{1-x})" />
-<img src="https://latex.codecogs.com/svg.latex?\zeta&space;^{-1}(x)&space;=&space;\log(\exp(x)-1)" title="\zeta ^{-1}(x) = \log(\exp(x)-1)" />
-<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;=&space;\int_{-\infty}^{x}&space;\sigma(y)dy" title="\zeta(x) = \int_{-\infty}^{x} \sigma(y)dy" />
-<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;-&space;\zeta(-x)&space;=&space;x" title="\zeta(x) - \zeta(-x) = x" />
+<img src="https://latex.codecogs.com/svg.latex?\sigma&space;(x)&space;=&space;\frac{\exp(x)}{\exp(x)&plus;\exp(0)}" title="\sigma (x) = \frac{\exp(x)}{\exp(x)+\exp(0)}" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}}{\mathrm{d}&space;x}&space;\sigma(x)&space;=&space;\sigma(x)(1-\sigma(x))" title="\frac{\mathrm{d}}{\mathrm{d} x} \sigma(x) = \sigma(x)(1-\sigma(x))" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?1-\sigma(x)&space;=&space;\sigma(-x)" title="1-\sigma(x) = \sigma(-x)" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}\zeta&space;(x)&space;=&space;\sigma(x)" title="\frac{\mathrm{d} }{\mathrm{d} x}\zeta (x) = \sigma(x)" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\sigma^{-1}(x)&space;=&space;\log(\frac{x}{1-x})" title="\sigma^{-1}(x) = \log(\frac{x}{1-x})" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\zeta&space;^{-1}(x)&space;=&space;\log(\exp(x)-1)" title="\zeta ^{-1}(x) = \log(\exp(x)-1)" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;=&space;\int_{-\infty}^{x}&space;\sigma(y)dy" title="\zeta(x) = \int_{-\infty}^{x} \sigma(y)dy" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;-&space;\zeta(-x)&space;=&space;x" title="\zeta(x) - \zeta(-x) = x" /> <br>
 </p>
 
 The function <img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma^{-1}(x)" title="\sigma^{-1}(x)" /> is called the <b>logit</b> in statistics.
