@@ -124,7 +124,7 @@ The <b>covariance matrix</b> of a random vector <img src="https://latex.codecogs
 
 The bernoulli distribution is a distribution over a single binary random variable.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=1)&space;=&space;\Phi" title="P(x=1) = \Phi" />
+<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=1)&space;=&space;\Phi" title="P(x=1) = \Phi" /> <br>
 <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=0)&space;=&space;1-\Phi" title="P(x=0) = 1-\Phi" />
 <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)&space;=&space;\Phi^x(1-\Phi)^{1-x}" title="P(x) = \Phi^x(1-\Phi)^{1-x}" />
 <img src="https://latex.codecogs.com/svg.latex?\inline&space;E_x[x]&space;=&space;\Phi" title="E_x[x] = \Phi" />
