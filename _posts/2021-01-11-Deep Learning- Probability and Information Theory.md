@@ -34,7 +34,7 @@ To be a probability mass function on a random variable <img src="https://latex.c
 
 For example, consider uniform distribution where all the states are equally likely. Suppose there are <img src="https://latex.codecogs.com/svg.latex?\inline&space;k" title="k" /> states, the probability mass function is:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=x_i)=\frac{1}{k}" title="P(x=x_i)=\frac{1}{k}" />
+<img src="https://latex.codecogs.com/svg.latex?P(x=x_i)=\frac{1}{k}" title="P(x=x_i)=\frac{1}{k}" />
 </p>
 
 ### Continuous Variables and Probability Density Functions
@@ -54,7 +54,7 @@ The probability over a subset is known as the marginal probability distribution.
 
 Conditional probability is the probability of some event, given that some other event has happened.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y|x)&space;=&space;\frac{P(x,y)}{P(x)}" title="P(y|x) = \frac{P(x,y)}{P(x)}" />
+<img src="https://latex.codecogs.com/svg.latex?P(y|x)&space;=&space;\frac{P(x,y)}{P(x)}" title="P(y|x) = \frac{P(x,y)}{P(x)}" />
 </p>
 The conditional probability is only defined when <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)>0" title="P(x)>0" />, we cannot compute the conditional probability conditioned on an event that never happens.
 It is important not to confuse conditional probability with computing what would happen if some action were undertaken. Computing the conequences of an action is called making an <b>intervention queries</b>. Intervention queries are the domain of <b>causal modeling</b>.
@@ -63,18 +63,18 @@ It is important not to confuse conditional probability with computing what would
 
 Any joint probability distribution over many random variables may be decomposed into conditional distributions over only one variable:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(a,b,c)=P(a|b,c)P(b,c)&space;=&space;P(a|b,c)P(b|c)P(c)" title="P(a,b,c)=P(a|b,c)P(b,c) = P(a|b,c)P(b|c)P(c)" />
+<img src="https://latex.codecogs.com/svg.latex?P(a,b,c)=P(a|b,c)P(b,c)&space;=&space;P(a|b,c)P(b|c)P(c)" title="P(a,b,c)=P(a|b,c)P(b,c) = P(a|b,c)P(b|c)P(c)" />
 </p>
 
 ## Independence and Conditional Independence
 
 Two variables <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" /> are <b>independent</b> if their probability distribution can be expressed as a product of two factors, one involving only <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and one involving only <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" />:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x,y)&space;=&space;P(x)P(y)&space;\Leftrightarrow&space;P(x|y)&space;=&space;P(x)" title="P(x,y) = P(x)P(y) \Leftrightarrow P(x|y) = P(x)" />
+<img src="https://latex.codecogs.com/svg.latex?P(x,y)&space;=&space;P(x)P(y)&space;\Leftrightarrow&space;P(x|y)&space;=&space;P(x)" title="P(x,y) = P(x)P(y) \Leftrightarrow P(x|y) = P(x)" />
 </p>
 Two random variables <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" /> are <b>conditionally independent</b> given a random variable <img src="https://latex.codecogs.com/svg.latex?\inline&space;z" title="z" /> if the conditional probability distribution over <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" /> factorizes in this way for every value of <img src="https://latex.codecogs.com/svg.latex?\inline&space;z" title="z" />:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x,y|z)=P(x|z)P(y|z)&space;\Leftrightarrow&space;P(x|y,z)&space;=&space;P(x|z)" title="P(x,y|z)=P(x|z)P(y|z) \Leftrightarrow P(x|y,z) = P(x|z)" />
+<img src="https://latex.codecogs.com/svg.latex?P(x,y|z)=P(x|z)P(y|z)&space;\Leftrightarrow&space;P(x|y,z)&space;=&space;P(x|z)" title="P(x,y|z)=P(x|z)P(y|z) \Leftrightarrow P(x|y,z) = P(x|z)" />
 </p>
 We can denote the independence with compact notation: <img src="https://latex.codecogs.com/svg.latex?\inline&space;x\perp&space;y" title="x\perp y" /> means that <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" /> are independent, while <img src="https://latex.codecogs.com/svg.latex?\inline&space;x\perp&space;y&space;|z" title="x\perp y |z" /> means that <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" /> are conditionally independent given <img src="https://latex.codecogs.com/svg.latex?\inline&space;z" title="z" />.
 
@@ -85,15 +85,15 @@ We can denote the independence with compact notation: <img src="https://latex.co
 The expectation or expected value of some function <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)" title="f(x)" /> with respect to a probability distribution <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)" title="P(x)" /> is the average or mean value that <img src="https://latex.codecogs.com/svg.latex?\inline&space;f" title="f" /> takes on when <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> is drawn from <img src="https://latex.codecogs.com/svg.latex?\inline&space;P" title="P" />.
 For discrete variables:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{E}_{x\sim&space;P}[f(x)]&space;=&space;\sum_x&space;P(x)f(x)" title="\mathbb{E}_{x\sim P}[f(x)] = \sum_x P(x)f(x)" />
+<img src="https://latex.codecogs.com/svg.latex?\mathbb{E}_{x\sim&space;P}[f(x)]&space;=&space;\sum_x&space;P(x)f(x)" title="\mathbb{E}_{x\sim P}[f(x)] = \sum_x P(x)f(x)" />
 </p>
 For continuous variables:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{E}_{x\sim&space;p}[f(x)]&space;=&space;\int_x&space;p(x)f(x)dx" title="\mathbb{E}_{x\sim p}[f(x)] = \int_x p(x)f(x)dx" />
+<img src="https://latex.codecogs.com/svg.latex?\mathbb{E}_{x\sim&space;p}[f(x)]&space;=&space;\int_x&space;p(x)f(x)dx" title="\mathbb{E}_{x\sim p}[f(x)] = \int_x p(x)f(x)dx" />
 </p>
 Moreover, expectations are linear, for example,
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{E}_{x}[\alpha&space;f(x)&space;&plus;&space;\beta&space;g(x)]&space;=&space;\alpha&space;\mathbb{E}_{x}[f(x)]&space;&plus;&space;\beta&space;\mathbb{E}_{x}[g(x)]" title="\mathbb{E}_{x}[\alpha f(x) + \beta g(x)] = \alpha \mathbb{E}_{x}[f(x)] + \beta \mathbb{E}_{x}[g(x)]" />
+<img src="https://latex.codecogs.com/svg.latex?\mathbb{E}_{x}[\alpha&space;f(x)&space;&plus;&space;\beta&space;g(x)]&space;=&space;\alpha&space;\mathbb{E}_{x}[f(x)]&space;&plus;&space;\beta&space;\mathbb{E}_{x}[g(x)]" title="\mathbb{E}_{x}[\alpha f(x) + \beta g(x)] = \alpha \mathbb{E}_{x}[f(x)] + \beta \mathbb{E}_{x}[g(x)]" />
 </p>
 when <img src="https://latex.codecogs.com/svg.latex?\inline&space;\alpha" title="\alpha" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\beta" title="\beta" /> are not dependent on <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" />.
 
@@ -101,7 +101,7 @@ when <img src="https://latex.codecogs.com/svg.latex?\inline&space;\alpha" title=
 
 The variance gives a measure of how much the values of a function of a random variable <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> vary as we sample different values of <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> from its probability distribution:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Var(f(x))&space;=&space;\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]" title="Var(f(x)) = \mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]" />
+<img src="https://latex.codecogs.com/svg.latex?Var(f(x))&space;=&space;\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]" title="Var(f(x)) = \mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]" />
 </p>
 When the variance is low, the values of <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)" title="f(x)" /> cluster near their expected value. The square root of the variance is known as the <b>standard deviation</b>.
 
@@ -109,13 +109,13 @@ When the variance is low, the values of <img src="https://latex.codecogs.com/svg
 
 The covariance gives some sense of how much to values are linearly related to each other, as wlel as the scale of these variables:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Cov(f(x),g(y))&space;=&space;\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]" title="Cov(f(x),g(y)) = \mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]" />
+<img src="https://latex.codecogs.com/svg.latex?Cov(f(x),g(y))&space;=&space;\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]" title="Cov(f(x),g(y)) = \mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]" />
 </p>
 High absolute values of the covariance mean that the values change very much and are both far from their respective means at the same time. If the sign of the covariance is positive, then both variables tend to take on relatively high values simultaneously. If the sign of the covariance is negative, then one variable tends to take on a relatively high value at the times that the other takes on a relatively low value and vice versa. Other measures such as <b>correlation</b> normalize the contribution of each variable in order to measure only how much the variables are related, rather than also veing affected by the scale of the seperate variables.
 The notions of covariance and dependence are related but still distinct. If the covariance is zero, the two variables are linearly dependent. However, there could also be cases where the variables show non-linear dependency and covariance is not zero. However, there cannot be dependency if the covariance is not zero.
 The <b>covariance matrix</b> of a random vector <img src="https://latex.codecogs.com/svg.latex?\inline&space;x&space;\in&space;\mathbb{R}^n" title="x \in \mathbb{R}^n" /> is an <img src="https://latex.codecogs.com/svg.latex?\inline&space;n*n" title="n*n" /> matrix, such that
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Cov(x)_{i,j}&space;=&space;\left\{\begin{matrix}&space;Cov(x_i,x_j)&space;&&space;,i\neq&space;j\\&space;Var(x_i)&space;&&space;,i=j&space;\end{matrix}\right." title="Cov(x)_{i,j} = \left\{\begin{matrix} Cov(x_i,x_j) & ,i\neq j\\ Var(x_i) & ,i=j \end{matrix}\right." />
+<img src="https://latex.codecogs.com/svg.latex?Cov(x)_{i,j}&space;=&space;\left\{\begin{matrix}&space;Cov(x_i,x_j)&space;&&space;,i\neq&space;j\\&space;Var(x_i)&space;&&space;,i=j&space;\end{matrix}\right." title="Cov(x)_{i,j} = \left\{\begin{matrix} Cov(x_i,x_j) & ,i\neq j\\ Var(x_i) & ,i=j \end{matrix}\right." />
 </p>
 
 ## Common Probability Distribution
@@ -124,27 +124,27 @@ The <b>covariance matrix</b> of a random vector <img src="https://latex.codecogs
 
 The bernoulli distribution is a distribution over a single binary random variable.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=1)&space;=&space;\Phi" title="P(x=1) = \Phi" /> <br>
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x=0)&space;=&space;1-\Phi" title="P(x=0) = 1-\Phi" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)&space;=&space;\Phi^x(1-\Phi)^{1-x}" title="P(x) = \Phi^x(1-\Phi)^{1-x}" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;E_x[x]&space;=&space;\Phi" title="E_x[x] = \Phi" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Var_x(x)&space;=&space;\Phi(1-\Phi)" title="Var_x(x) = \Phi(1-\Phi)" />
+<img src="https://latex.codecogs.com/svg.latex?P(x=1)&space;=&space;\Phi" title="P(x=1) = \Phi" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?P(x=0)&space;=&space;1-\Phi" title="P(x=0) = 1-\Phi" />
+<img src="https://latex.codecogs.com/svg.latex?P(x)&space;=&space;\Phi^x(1-\Phi)^{1-x}" title="P(x) = \Phi^x(1-\Phi)^{1-x}" />
+<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\Phi" title="E_x[x] = \Phi" />
+<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\Phi(1-\Phi)" title="Var_x(x) = \Phi(1-\Phi)" />
 </p>
 
 ### Multinomial Distribution
 
 THe mulitnomial distribution is a distribution over a single discrete variable with <img src="https://latex.codecogs.com/svg.latex?\inline&space;k" title="k" /> different states, where <img src="https://latex.codecogs.com/svg.latex?\inline&space;k" title="k" /> is finite. Multinoulli distributions are often used to refer to distributions over categories of objects, so we do not usually assume that state 1 has numerical value 1, etc. For this reason, we do not usually need to compute the expectation or variance of multinoulli-distributed random variables.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)&space;=&space;\Phi^x(1-\Phi)^{n-x}" title="P(x) = \Phi^x(1-\Phi)^{n-x}" />
+<img src="https://latex.codecogs.com/svg.latex?P(x)&space;=&space;\Phi^x(1-\Phi)^{n-x}" title="P(x) = \Phi^x(1-\Phi)^{n-x}" />
 </p>
 
 ### Gaussian Distribution
 
 The most commonly used distribution over real numbers is the normal distribution, also known as the gaussian distribution.
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;N(x;\mu&space;,\sigma&space;^2)&space;=&space;\frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" title="N(x;\mu ,\sigma ^2) = \frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;E_x[x]&space;=&space;\mu" title="E_x[x] = \mu" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Var_x(x)&space;=&space;\sigma^2" title="Var_x(x) = \sigma^2" />
+<img src="https://latex.codecogs.com/svg.latex?N(x;\mu&space;,\sigma&space;^2)&space;=&space;\frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" title="N(x;\mu ,\sigma ^2) = \frac{1}{\sqrt{2\Pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}" />
+<img src="https://latex.codecogs.com/svg.latex?E_x[x]&space;=&space;\mu" title="E_x[x] = \mu" />
+<img src="https://latex.codecogs.com/svg.latex?Var_x(x)&space;=&space;\sigma^2" title="Var_x(x) = \sigma^2" />
 </p>
 When we need to frequently evaluate the PDF with different parameter values, a more efficient way parametrizing the distribution is to use a parameter <img src="https://latex.codecogs.com/svg.latex?\inline&space;\beta" title="\beta" /> to control the <b>precision</b> or inverse variance of the distribution, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\beta&space;=&space;\sigma^{-2}" title="\beta = \sigma^{-2}" />
 
@@ -154,7 +154,7 @@ In the absence of prior knowledge about what form a distribution over the real n
 real numbers. We can thus think of the normal distribution as being the one that inserts the least amount of prior knowledge into a model.
 The normal distribution generalizes to <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mathbb{R}^{n}" title="\mathbb{R}^{n}" />, in which case it is known as the <b>multivariate normal distribution</b>. It may be parametrized with a positive definite symmetric matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;\sum" title="\sum" />:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;N(x;\mu&space;,\sum&space;)&space;=&space;\frac{1}{(2\Pi)^{n/2}\left&space;|&space;\sum&space;\right&space;|^{0.5}}&space;e^{-\frac{1}{2}(x-\mu)^T\sum&space;^{-1}(x-\mu)}" title="N(x;\mu ,\sum ) = \frac{1}{(2\Pi)^{n/2}\left | \sum \right |^{0.5}} e^{-\frac{1}{2}(x-\mu)^T\sum ^{-1}(x-\mu)}" />
+<img src="https://latex.codecogs.com/svg.latex?N(x;\mu&space;,\sum&space;)&space;=&space;\frac{1}{(2\Pi)^{n/2}\left&space;|&space;\sum&space;\right&space;|^{0.5}}&space;e^{-\frac{1}{2}(x-\mu)^T\sum&space;^{-1}(x-\mu)}" title="N(x;\mu ,\sum ) = \frac{1}{(2\Pi)^{n/2}\left | \sum \right |^{0.5}} e^{-\frac{1}{2}(x-\mu)^T\sum ^{-1}(x-\mu)}" />
 </p>
 where <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu" title="\mu" /> is mean, and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\sum" title="\sum" /> is covariance matrix.
 We often fix the covariance matrix to be a diagonal matrix. An even simpler version is the <b>isotropic</b> Gaussian distribution, whose covariance matrix is a scalar times the identity matrix.
@@ -163,11 +163,11 @@ We often fix the covariance matrix to be a diagonal matrix. An even simpler vers
 
 In the context of deep learning, we often want to have a probability distribution with a sharp point at <img src="https://latex.codecogs.com/svg.latex?\inline&space;x=0" title="x=0" />. To accomplish this, we can use the exponential distribution:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x;\lambda)&space;=&space;\lambda&space;e^{-\lambda&space;x}" title="P(x;\lambda) = \lambda e^{-\lambda x}" />
+<img src="https://latex.codecogs.com/svg.latex?P(x;\lambda)&space;=&space;\lambda&space;e^{-\lambda&space;x}" title="P(x;\lambda) = \lambda e^{-\lambda x}" />
 </p>
 A closely related probability distribution that allows us to place a sharp peak of probability mass at an arbitrary point <img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu" title="\mu" /> is the Laplace distribution:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;Laplace(x;\mu,,\gamma&space;)&space;=&space;\frac{1}{2\gamma&space;}e^{-\frac{\left&space;|&space;x-\mu&space;\right&space;|}{\gamma&space;}}" title="Laplace(x;\mu,,\gamma ) = \frac{1}{2\gamma }e^{-\frac{\left | x-\mu \right |}{\gamma }}" />
+<img src="https://latex.codecogs.com/svg.latex?Laplace(x;\mu,,\gamma&space;)&space;=&space;\frac{1}{2\gamma&space;}e^{-\frac{\left&space;|&space;x-\mu&space;\right&space;|}{\gamma&space;}}" title="Laplace(x;\mu,,\gamma ) = \frac{1}{2\gamma }e^{-\frac{\left | x-\mu \right |}{\gamma }}" />
 </p>
 
 ### The Dirac Distribution and Empirical Distribution
@@ -176,7 +176,7 @@ In some cases, we wish to specify that all of the mass in a probability mass in 
 
 A common use of the Dirac delta distribution is as a component of an empirical distribution,
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{p}(x)&space;=&space;\frac{1}{m}\sum&space;_{i=1}^{m}\delta&space;(x-x^{(i)})" title="\hat{p}(x) = \frac{1}{m}\sum _{i=1}^{m}\delta (x-x^{(i)})" />
+<img src="https://latex.codecogs.com/svg.latex?\hat{p}(x)&space;=&space;\frac{1}{m}\sum&space;_{i=1}^{m}\delta&space;(x-x^{(i)})" title="\hat{p}(x) = \frac{1}{m}\sum _{i=1}^{m}\delta (x-x^{(i)})" />
 </p>
 which puts a probability mass <img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{1}{m}" title="\frac{1}{m}" /> on each of the <img src="https://latex.codecogs.com/svg.latex?\inline&space;m" title="m" /> points <img src="https://latex.codecogs.com/svg.latex?\inline&space;x^{(1)},...,x^{(m)}" title="x^{(1)},...,x^{(m)}" /> forming a given dataset or collection of samples.
 
@@ -184,7 +184,7 @@ which puts a probability mass <img src="https://latex.codecogs.com/svg.latex?\in
 
 A mixture distribution is made up of several component distributions. On each trial, the choice of whihc component distribution generates the sample is determined by sampling a component identity from a multinomial distribution:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)&space;=&space;\sum&space;_i&space;P(c=i)P(x|c=i)" title="P(x) = \sum _i P(c=i)P(x|c=i)" />
+<img src="https://latex.codecogs.com/svg.latex?P(x)&space;=&space;\sum&space;_i&space;P(c=i)P(x|c=i)" title="P(x) = \sum _i P(c=i)P(x|c=i)" />
 </p>
 where <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(c)" title="P(c)" /> is the multinomial distribution over component identities.
 
@@ -196,7 +196,7 @@ By comparison, <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(c|
 ## Useful Properties of Common Functions
 * <b>Logistic Sigmoid:</b>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma&space;(x)&space;=&space;\frac{1}{1&plus;\exp(-x)}" title="\sigma (x) = \frac{1}{1+\exp(-x)}" />
+<img src="https://latex.codecogs.com/svg.latex?\sigma&space;(x)&space;=&space;\frac{1}{1&plus;\exp(-x)}" title="\sigma (x) = \frac{1}{1+\exp(-x)}" />
 </p>
 The sigmoid function saturates when its argument is very positive or very negative, meaning that the function becomes very flat and insensitive to small changes in its input.
 <p align="center">
@@ -207,7 +207,7 @@ The sigmoid function saturates when its argument is very positive or very negati
 </p>
 * <b>Softplus function:</b>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\zeta&space;(x)&space;=&space;\log(1&plus;\exp(x))" title="\zeta (x) = \log(1+\exp(x))" />
+<img src="https://latex.codecogs.com/svg.latex?\zeta&space;(x)&space;=&space;\log(1&plus;\exp(x))" title="\zeta (x) = \log(1+\exp(x))" />
 </p>
 The name of softplus function comes from the fact that it is a smoothed or "softened" version of ReLU.
 <p align="center">
@@ -218,21 +218,21 @@ The name of softplus function comes from the fact that it is a smoothed or "soft
 </p>
 The following properties are all useful enough to memorize:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma&space;(x)&space;=&space;\frac{\exp(x)}{\exp(x)&plus;\exp(0)}" title="\sigma (x) = \frac{\exp(x)}{\exp(x)+\exp(0)}" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\mathrm{d}}{\mathrm{d}&space;x}&space;\sigma(x)&space;=&space;\sigma(x)(1-\sigma(x))" title="\frac{\mathrm{d}}{\mathrm{d} x} \sigma(x) = \sigma(x)(1-\sigma(x))" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;1-\sigma(x)&space;=&space;\sigma(-x)" title="1-\sigma(x) = \sigma(-x)" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}\zeta&space;(x)&space;=&space;\sigma(x)" title="\frac{\mathrm{d} }{\mathrm{d} x}\zeta (x) = \sigma(x)" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma^{-1}(x)&space;=&space;\log(\frac{x}{1-x})" title="\sigma^{-1}(x) = \log(\frac{x}{1-x})" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\zeta&space;^{-1}(x)&space;=&space;\log(\exp(x)-1)" title="\zeta ^{-1}(x) = \log(\exp(x)-1)" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\zeta(x)&space;=&space;\int_{-\infty}^{x}&space;\sigma(y)dy" title="\zeta(x) = \int_{-\infty}^{x} \sigma(y)dy" />
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;\zeta(x)&space;-&space;\zeta(-x)&space;=&space;x" title="\zeta(x) - \zeta(-x) = x" />
+<img src="https://latex.codecogs.com/svg.latex?\sigma&space;(x)&space;=&space;\frac{\exp(x)}{\exp(x)&plus;\exp(0)}" title="\sigma (x) = \frac{\exp(x)}{\exp(x)+\exp(0)}" />
+<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}}{\mathrm{d}&space;x}&space;\sigma(x)&space;=&space;\sigma(x)(1-\sigma(x))" title="\frac{\mathrm{d}}{\mathrm{d} x} \sigma(x) = \sigma(x)(1-\sigma(x))" />
+<img src="https://latex.codecogs.com/svg.latex?1-\sigma(x)&space;=&space;\sigma(-x)" title="1-\sigma(x) = \sigma(-x)" />
+<img src="https://latex.codecogs.com/svg.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}\zeta&space;(x)&space;=&space;\sigma(x)" title="\frac{\mathrm{d} }{\mathrm{d} x}\zeta (x) = \sigma(x)" />
+<img src="https://latex.codecogs.com/svg.latex?\sigma^{-1}(x)&space;=&space;\log(\frac{x}{1-x})" title="\sigma^{-1}(x) = \log(\frac{x}{1-x})" />
+<img src="https://latex.codecogs.com/svg.latex?\zeta&space;^{-1}(x)&space;=&space;\log(\exp(x)-1)" title="\zeta ^{-1}(x) = \log(\exp(x)-1)" />
+<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;=&space;\int_{-\infty}^{x}&space;\sigma(y)dy" title="\zeta(x) = \int_{-\infty}^{x} \sigma(y)dy" />
+<img src="https://latex.codecogs.com/svg.latex?\zeta(x)&space;-&space;\zeta(-x)&space;=&space;x" title="\zeta(x) - \zeta(-x) = x" />
 </p>
 
 The function <img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma^{-1}(x)" title="\sigma^{-1}(x)" /> is called the <b>logit</b> in statistics.
 
 ## Bayes' Rule
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x|y)&space;=&space;\frac{P(x)P(y|x)}{P(y)}" title="P(x|y) = \frac{P(x)P(y|x)}{P(y)}" />
+<img src="https://latex.codecogs.com/svg.latex?P(x|y)&space;=&space;\frac{P(x)P(y|x)}{P(y)}" title="P(x|y) = \frac{P(x)P(y|x)}{P(y)}" />
 </p>
 Although <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y)" title="P(y)" /> appears to be in the formula, it is usually feasible to compute <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y)&space;=&space;\sum&space;_x&space;P(y|x)P(x)" title="P(y) = \sum _x P(y|x)P(x)" /> so we do not need to begin with knowledge of <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y)" title="P(y)" />.
 
@@ -248,18 +248,18 @@ For higher dimensions, the derivative generalizes to the determinant of the <b>J
 The basic intuition behind information theory is that learning that an unlikely event has ovvured is more informative than learning that a likely event has occured.
 A common function used is the <b>self-information</b> of an event <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" /> to be
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;I(x)&space;=&space;-\log&space;P(x)" title="I(x) = -\log P(x)" />
+<img src="https://latex.codecogs.com/svg.latex?I(x)&space;=&space;-\log&space;P(x)" title="I(x) = -\log P(x)" />
 </p>
 Here, we mean to use natural logarithm, with base <img src="https://latex.codecogs.com/svg.latex?\inline&space;e" title="e" /> and wriiten in units of <b>nats</b>. Others use a base-2 logarithms and units called <b>bits</b> or <b>shannons</b>. However, the self-information deals with only a single outcome.
 
 We can quantify the amount of uncerainty in an entire probability distribution using the <b>Shannon entropy</b>:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;H(P)&space;=&space;\mathbb{E}_{x\sim&space;P}[I(x)]&space;=&space;-\mathbb{E}_{x\sim&space;P}[\log&space;P(x)]" title="H(P) = \mathbb{E}_{x\sim P}[I(x)] = -\mathbb{E}_{x\sim P}[\log P(x)]" />
+<img src="https://latex.codecogs.com/svg.latex?H(P)&space;=&space;\mathbb{E}_{x\sim&space;P}[I(x)]&space;=&space;-\mathbb{E}_{x\sim&space;P}[\log&space;P(x)]" title="H(P) = \mathbb{E}_{x\sim P}[I(x)] = -\mathbb{E}_{x\sim P}[\log P(x)]" />
 </p>
 When x is continuous, the Shannon entropy is known as the <b>differential entropy</b>.
 If we have two seperate probability distributions <img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x)" title="P(x)" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;Q(x)" title="Q(x)" /> over the same random variable <img src="https://latex.codecogs.com/svg.latex?\inline&space;x" title="x" />, we can measure how different these two distributions are using the <b>Kullback-Leibler (KL) divergence</b>:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\inline&space;D_KL(P||Q)&space;=&space;\mathbb{E}_{x\sim&space;P}\begin{bmatrix}&space;\log&space;\frac{P(x)}{Q(x)}&space;\end{bmatrix}" title="D_KL(P||Q) = \mathbb{E}_{x\sim P}\begin{bmatrix} \log \frac{P(x)}{Q(x)} \end{bmatrix}" />
+<img src="https://latex.codecogs.com/svg.latex?D_KL(P||Q)&space;=&space;\mathbb{E}_{x\sim&space;P}\begin{bmatrix}&space;\log&space;\frac{P(x)}{Q(x)}&space;\end{bmatrix}" title="D_KL(P||Q) = \mathbb{E}_{x\sim P}\begin{bmatrix} \log \frac{P(x)}{Q(x)} \end{bmatrix}" />
 </p>
 In the case of discrete variables, it is the extra amount of information needed to send a message containing symbols drawn from probability distribution <img src="https://latex.codecogs.com/svg.latex?\inline&space;\P" title="P" />, when we use a code that was designed to minimize the length of messages drawn from probability distribution <img src="https://latex.codecogs.com/svg.latex?\inline&space;Q" title="Q" />.
 
