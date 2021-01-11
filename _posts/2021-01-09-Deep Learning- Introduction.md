@@ -19,13 +19,13 @@ AI needs immense amount of knowledge about the world. This can be provided throu
 ## Historical Trends in DL
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?Cybernetics&space;\rightarrow&space;Connectionism&space;\rightarrow&space;Deep\&space;Learning" title="Cybernetics \rightarrow Connectionism \rightarrow Deep\ Learning" />
+<img src="https://latex.codecogs.com/svg.latex?\inline&space;Cybernetics&space;\rightarrow&space;Connectionism&space;\rightarrow&space;Deep\&space;Learning" title="Cybernetics \rightarrow Connectionism \rightarrow Deep\ Learning" />
 </p>
 ### Cybernetics
-<img src="https://latex.codecogs.com/svg.latex?(x_1,&space;x_2,...,&space;x_n)&space;\rightarrow&space;y" title="(x_1, x_2,..., x_n) \rightarrow y" />. These models would learn a set of weights <img src="https://latex.codecogs.com/svg.latex?(w_1,&space;w_2,...,&space;w_n)" title="(w_1, w_2,..., w_n)" /> and compute their output <img src="https://latex.codecogs.com/svg.latex?f(x,w)&space;=&space;x_1w_1&space;&plus;&space;x_2w_2&space;&plus;&space;...&space;&plus;&space;x_nw_n" title="f(x,w) = x_1w_1 + x_2w_2 + ... + x_nw_n" />.
-  * <b>McCullochs-Pitts Neuron:</b> An early model of brain function. Recognize different categories by testing whether <img src="https://latex.codecogs.com/svg.latex?f(x,w)" title="f(x,w)" /> is positive or negative. Of course, for the model to correspond to the desired definition of the categories, the weights needed to be set correctly. These weights could be set by the human operator.
+<img src="https://latex.codecogs.com/svg.latex?\inline&space;(x_1,&space;x_2,...,&space;x_n)&space;\rightarrow&space;y" title="(x_1, x_2,..., x_n) \rightarrow y" />. These models would learn a set of weights <img src="https://latex.codecogs.com/svg.latex?\inline&space;(w_1,&space;w_2,...,&space;w_n)" title="(w_1, w_2,..., w_n)" /> and compute their output <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x,w)&space;=&space;x_1w_1&space;&plus;&space;x_2w_2&space;&plus;&space;...&space;&plus;&space;x_nw_n" title="f(x,w) = x_1w_1 + x_2w_2 + ... + x_nw_n" />.
+  * <b>McCullochs-Pitts Neuron:</b> An early model of brain function. Recognize different categories by testing whether <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x,w)" title="f(x,w)" /> is positive or negative. Of course, for the model to correspond to the desired definition of the categories, the weights needed to be set correctly. These weights could be set by the human operator.
   * <b>Perceptron:</b> The first model that could learn the weights defining the categories given examples of inputs. Used Stochastic Gradient Descent.
-  * <b>Adaptive Linear Elementt (Adaline):</b> Returns the value of <img src="https://latex.codecogs.com/svg.latex?f(x)" title="f(x)" /> itself to predict a real numbers from the data. Uses a slight modification of the Stochastic Gradient Descent.
+  * <b>Adaptive Linear Elementt (Adaline):</b> Returns the value of <img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)" title="f(x)" /> itself to predict a real numbers from the data. Uses a slight modification of the Stochastic Gradient Descent.
 
 Perceptron and Adaline are  linear models, and are not capable of learning XOR functions.
 
