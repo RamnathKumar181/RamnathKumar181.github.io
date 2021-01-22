@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fooling automated surveillance cameras: Adversarial patches to attack person detection
+title: Fooling automated surveillance cameras- Adversarial patches to attack person detection
 published: true
 ---
 

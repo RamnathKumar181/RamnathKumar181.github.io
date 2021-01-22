@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dropout: A Simple Way to Prevent Neural Networks from Overfitting
+title: Dropout- A Simple Way to Prevent Neural Networks from Overfitting
 published: true
 ---
 
