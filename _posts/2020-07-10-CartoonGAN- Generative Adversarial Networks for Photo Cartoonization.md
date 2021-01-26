@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CartoonGAN: Generative Adversarial Networks for Photo Cartoonization
+title: CartoonGAN- Generative Adversarial Networks for Photo Cartoonization
 published: true
 ---
 
