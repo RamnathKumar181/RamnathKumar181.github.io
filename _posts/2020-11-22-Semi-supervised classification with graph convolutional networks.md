@@ -6,7 +6,7 @@ published: true
 
 An overview of the paper “[Semi-supervised classification with graph convolutional networks](https://arxiv.org/pdf/1609.02907.pdf)”.
 <!--break-->
-The author present a scalable approach for semi-supervised learning on graph structured data that is based on an efficient variant of CNN which operate directly on graphs. All images and tables in this post are from their paper.
+The author presents a scalable approach for semi-supervised learning on graph structured data that is based on an efficient variant of CNN which operate directly on graphs. All images and tables in this post are from their paper.
 
 ## Introduction
 
