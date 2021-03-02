@@ -44,7 +44,7 @@ A neural network model based on graph colvolutions can therefore be built by sta
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?g_{\theta}&space;\star&space;x&space;\approx&space;{\theta_0}'x&space;-&space;{\theta_1}'D^{-0.5}AD^{-0.5}x" title="g_{\theta} \star x \approx {\theta_0}'x - {\theta_1}'D^{-0.5}AD^{-0.5}x" />
 </p>
-In this linear formulation, we only consider immediate neighbors of the node. Successive application of such filters of this form then effectively convolve the <img src="https://latex.codecogs.com/svg.latex?\inline&space;k^{th}" title="k^{th}" /> order neigborhood of a node, where <img src="https://latex.codecogs.com/svg.latex?\inline&space;k" title="k" /> is the number of successive filterning operations or convolutional layers in a neural network model. To cut down on the number of parameters, we use <img src="https://latex.codecogs.com/svg.latex?\inline&space;\theta&space;=&space;{\theta_0}'=-{\theta_1}'" title="\theta = {\theta_0}'=-{\theta_1}'" /> such that above equation is approximated to:
+In this linear formulation, we only consider immediate neighbors of the node. Successive application of such filters of this form then effectively convolve the <img src="https://latex.codecogs.com/svg.latex?\inline&space;k^{th}" title="k^{th}" /> order neigborhood of a node, where <img src="https://latex.codecogs.com/svg.latex?\inline&space;K" title="K" /> is the number of successive filterning operations or convolutional layers in a neural network model. To cut down on the number of parameters, we use <img src="https://latex.codecogs.com/svg.latex?\inline&space;\theta&space;=&space;{\theta_0}'=-{\theta_1}'" title="\theta = {\theta_0}'=-{\theta_1}'" /> such that above equation is approximated to:
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?g_{\theta}&space;\star&space;x&space;\approx&space;\theta&space;(I_N&space;&plus;&space;D^{-0.5}AD^{-0.5})x" title="g_{\theta} \star x \approx \theta (I_N + D^{-0.5}AD^{-0.5})x" />
 </p>
@@ -53,7 +53,7 @@ We finally obtain
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?Z&space;=&space;\widetilde{D}^{-0.5}&space;\widetilde{A}&space;\widetilde{D}^{-0.5}&space;X&space;\Theta" title="Z = \widetilde{D}^{-0.5} \widetilde{A} \widetilde{D}^{-0.5} X \Theta" />
 </p>
-which is intuitively similar to computing <img src="https://latex.codecogs.com/svg.latex?X&space;\Theta" title="X \Theta" /> and propagating these outputs across all nodes using the adjacency matrix.
+which is intuitively similar to computing <img src="https://latex.codecogs.com/svg.latex?\inline&space;X&space;\theta" title="X \theta" /> and propagating these outputs across all nodes using the adjacency matrix.
 
 <p align="center">
 <b>Graph Convolutional Network</b>
