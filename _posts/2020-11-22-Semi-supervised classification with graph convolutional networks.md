@@ -22,7 +22,7 @@ The above equation relies on the assumption that connected nodes in the graph ar
 
 Here, we consider a multi-layer Graph Covolutional Network with the following layer-wise propagation rule:
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?H^{(l&plus;1)}&space;=&space;\sigma&space;(\widetilde{D}^{-0.5}\widetilde{A}\widetilde{D}^{-0.5}H^{(l)}W^{(l)})" title="H^{(l&plus;1)}&space;=&space;\sigma&space;(\widetilde{D}^{-0.5}\widetilde{A}\widetilde{D}^{-0.5}H^{(l)}W^{(l)})" />
+<img src="https://latex.codecogs.com/svg.latex?H^{(l&plus;1)}=\sigma(\widetilde{D}^{-0.5}&space;\widetilde{A}&space;\widetilde{D}^{-0.5}&space;H^{(l)}&space;W^{(l)})" title="H^{(l+1)}=\sigma(\widetilde{D}^{-0.5} \widetilde{A} \widetilde{D}^{-0.5} H^{(l)} W^{(l)})" />
 </p>
 Here, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\widetilde{A}&space;=&space;A&space;&plus;&space;I_N" title="\widetilde{A} = A + I_N" /> is the adjacency matrix of the undirected graph with added self-connections. <img src="https://latex.codecogs.com/svg.latex?\inline&space;\widetilde{D}" title="\widetilde{D}" /> is the degree matrix of <img src="https://latex.codecogs.com/svg.latex?\inline&space;\widetilde{A}" title="\widetilde{A}" />.
 A is the adjacency matrix + self loops. This is done so that each node includes its own features at its next representaion.
