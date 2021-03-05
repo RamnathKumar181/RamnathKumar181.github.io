@@ -24,7 +24,7 @@ An introduction of the background knowledge of learning individual causal effect
 ** This would imply that <img src="https://latex.codecogs.com/svg.latex?\mathbb{E}[y^t|x]&space;=&space;\mathbb{E}[y|x,t]" title="\mathbb{E}[y^t|x] = \mathbb{E}[y|x,t]" />.
 
 <p align="center">
-<b>Workflow of propose d framework.</b>
+<b>Workflow of proposed framework.</b>
 </p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/7/Figure-1.png?raw=true" alt="Figure 1"/>
