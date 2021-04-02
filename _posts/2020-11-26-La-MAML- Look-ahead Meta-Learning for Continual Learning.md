@@ -1,6 +1,6 @@
 ---
 layout: post
-title: La-MAML: Look-ahead Meta-Learning for Continual Learning
+title: La-MAML- Look-ahead Meta-Learning for Continual Learning
 published: true
 ---
 
