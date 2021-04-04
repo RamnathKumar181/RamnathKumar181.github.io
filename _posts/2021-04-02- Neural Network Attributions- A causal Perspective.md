@@ -4,7 +4,7 @@ title:  Neural Network Attributions- A causal Perspective
 published: true
 ---
 
-An overview of the paper “[ Neural  Network Attributions- A causal Perspective](https://arxiv.org/pdf/1902.02302.pdf)”.
+An overview of the paper “[Neural  Network Attributions- A causal Perspective](https://arxiv.org/pdf/1902.02302.pdf)”.
 <!--break-->
 The author proposes a new attribution method for neural networks developed using first principles of causality. All images and tables in this post are from their paper.
 The neural network architecture is viewed as a Structural Causal Model, a nd a methodology to compute the causal effect of each feature on the output is presented. Formally, attributions are defined as the effect of an input feature on the prediction function's output. This is an inherently causal question. While gradients answer the question "How much would perturbing a particular input affect the output?", they do not capture the causal influence of an input on a particular neuron. The author's approach views the neural network as a structural causal model (SCM) and proposes a new method to compute the Average Causal Effect of an input on an output neuron.  
@@ -40,7 +40,7 @@ The average causal affect (ACE) of a binary random variable <img src="https://la
 <img src="https://latex.codecogs.com/svg.latex?ACE_{x_i=\alpha}^{y}&space;=&space;\mathbb{E}[y|x_i=\alpha]&space;-&space;baseline_{x_i}" title="ACE_{x_i=\alpha}^{y} = \mathbb{E}[y|x_i=\alpha] - baseline_{x_i}" />
 </p>
 
-#### Causal Attribution
+### Causal Attribution
 We define <img src="https://latex.codecogs.com/svg.latex?ACE_{x_i=\alpha}^{y}" title="ACE_{x_i=\alpha}^{y}" /> as the causal attribution of input neuron <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> on an output neuron <img src="https://latex.codecogs.com/svg.latex?y" title="y" />. An ideal baseline would be any point along the decision boundary of the neural network, where predictions are neutral. In this work, the authors propose the average ACE of <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> on <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> as the baseline value for <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" />, i.e. <img src="https://latex.codecogs.com/svg.latex?baseline_{x_i}&space;=&space;\mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i&space;=&space;\alpha]]" title="baseline_{x_i} = \mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i = \alpha]]" />.
 
 ### Calculating Interventional Expectations

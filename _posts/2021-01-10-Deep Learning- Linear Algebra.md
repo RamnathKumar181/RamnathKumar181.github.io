@@ -25,7 +25,7 @@ The study of linear algebra involves several types of mathematical objects:
 </p>
 * <b>Tensors:</b> more than 2-D array. For example, <img src="https://latex.codecogs.com/svg.latex?\inline&space;A_{i,j,k}" title="A_{i,j,k}" />
 
-One important operation on matricces is the transpose. The transpose of a matrix is the mirror image of the matrix across a diagonal line, called the main diagonal, running down and to the right, starting from its upper left corner. <img src="https://latex.codecogs.com/svg.latex?\inline&space;(A^T)_{i,j}&space;=&space;A_{j,i}" title="(A^T)_{i,j} = A_{j,i}" />
+One important operation on matrices is the transpose. The transpose of a matrix is the mirror image of the matrix across a diagonal line, called the main diagonal, running down and to the right, starting from its upper left corner. <img src="https://latex.codecogs.com/svg.latex?\inline&space;(A^T)_{i,j}&space;=&space;A_{j,i}" title="(A^T)_{i,j} = A_{j,i}" />
 
 In Machine Learning, we allow addition of matrces and vectors where, <img src="https://latex.codecogs.com/svg.latex?\inline&space;C_{i,j}&space;=&space;A_{i,j}&space;&plus;&space;b{j}" title="C_{i,j} = A_{i,j} + b{j}" />
 The implicit copying of b across each row is called broadcasting.
