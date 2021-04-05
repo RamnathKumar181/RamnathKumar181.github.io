@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  The effects of negative adaptation in Model-Agnostic Meta-Learning
+title:  Curriculum in Gradient-Based Meta-Reinforcement Learning
 published: true
 ---
 
-An overview of the paper “[The effects of negative adaptation in Model-Agnostic Meta-Learning](https://arxiv.org/pdf/1812.02159.pdf)”.
+An overview of the paper “[Curriculum in Gradient-Based Meta-Reinforcement Learning](https://arxiv.org/pdf/2002.07956.pdf)”.
 <!--break-->
-The author points out that the adaptation algorithm like MAML can significantly recrease the performance of an agent in a meta-reinforcement learning setting, even on a range of meta-learning tasks. All images and tables in this post are from their paper.
-The capacity of meta-learning algorithms to quickly adapt to a variety of tasks, including ones they did not experience during meta-training, has been a key factor in the recent success of these methods on few-shot learning problems. This particular advantage of using meta-learning over standard supervised or reinforcement learning is only well founded under the assumption that the adaptation phase does improve the performance of our model on the task of interest. However, in the classical framework of meta-learning, this constraint is only mildly enforced, if not at all, and we only see an improvement on average over a distribution of tasks.
+The author . All images and tables in this post are from their paper.
+
 
 ## Introduction
 
@@ -49,4 +49,4 @@ In order to mitigate the effects of negative adaptation, we need to include a co
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Gamma&space;_T(\theta)&space;=&space;G_0(\pi_{\theta})&space;-&space;G_0(\pi_{\theta'_T})" title="\Gamma _T(\theta) = G_0(\pi_{\theta}) - G_0(\pi_{\theta'_T})" />
 </p>
-Avoiding the negative adaptation translate to havin <img src="https://latex.codecogs.com/svg.latex?\Gamma&space;_T(\theta)&space;\leq&space;0" title="\Gamma _T(\theta) \leq 0" />, with high probability. Ideally, we would like to enforce this constraint over all tasks. However, in early experiments on MAML with this modified meta-objective, the authors were not able to significantly reduce the effect of negative adaptation, and more research is necessary.   
+Avoiding the negative adaptation translate to havin <img src="https://latex.codecogs.com/svg.latex?\Gamma&space;_T(\theta)&space;\leq&space;0" title="\Gamma _T(\theta) \leq 0" />, with high probability. Ideally, we would like to enforce this constraint over all tasks. However, in early experiments on MAML with this modified meta-objective, the authors were not able to significantly reduce the effect of negative adaptation, and more research is necessary.

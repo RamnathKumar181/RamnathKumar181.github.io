@@ -28,7 +28,7 @@ This is very similar to a normal learning task, but one dataset is considered as
 
 ### Training in the same way as testing
 
-A dataset <img src="https://latex.codecogs.com/svg.latex?D" title="D" /> contains pairs of feature vectors and labels, where each labels belong to a known label set <img src="https://latex.codecogs.com/svg.latex?l^{label}" title="l^{label}" />. Our classifer <img src="https://latex.codecogs.com/svg.latex?f_{\theta}" title="f_{\theta}" />, like any other ckassifier with parameter <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> outputs a probability of a data point belonging to the class <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> given the feature vector <img src="https://latex.codecogs.com/svg.latex?x" title="x" />, <img src="https://latex.codecogs.com/svg.latex?P_{\theta}(y|x)" title="P_{\theta}(y|x)" />. The optimal parameters maximize the probability of true labels across multiple training batches.
+A dataset <img src="https://latex.codecogs.com/svg.latex?D" title="D" /> contains pairs of feature vectors and labels, where each labels belong to a known label set <img src="https://latex.codecogs.com/svg.latex?l^{label}" title="l^{label}" />. Our classifer <img src="https://latex.codecogs.com/svg.latex?f_{\theta}" title="f_{\theta}" />, like any other classifier with parameter <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> outputs a probability of a data point belonging to the class <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> given the feature vector <img src="https://latex.codecogs.com/svg.latex?x" title="x" />, <img src="https://latex.codecogs.com/svg.latex?P_{\theta}(y|x)" title="P_{\theta}(y|x)" />. The optimal parameters maximize the probability of true labels across multiple training batches.
 
 In few-shot classification, the goal is to reduce the prediction error on data samples with unknown labels given a small support set for "fast learning" (similar to fine-tuning). To make the training process mimic what happens during inference, we would like to "fake" datasets with a subset of labels to avoid exposing all lables and modify the optimization procedure such as:
 * Sample a subset of labels <img src="https://latex.codecogs.com/svg.latex?L&space;\subset&space;L^{labels}" title="L \subset L^{labels}" />.
@@ -199,24 +199,16 @@ While fixing <img src="https://latex.codecogs.com/svg.latex?f_t&space;=&space;1"
 </p>
 The training process mimics what happens during test. During each training epoch, we first sample a dataset and then sample mini-batches out of train set to update <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> for <img src="https://latex.codecogs.com/svg.latex?T" title="T" /> rounds. The final state of the learner parameter <img src="https://latex.codecogs.com/svg.latex?\theta_T" title="\theta_T" /> is used to train the meta-learner on the test data.
 
-<p align="center">
-<b>Algorithm for meta-learner.</b>
-</p>
-<p align="center">
-<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-11.png?raw=true" alt="Figure 11"/>
-</p>
-
 ### MAML
 
 MAML is a fairly general optimization algorithm, compatible with any model that learns through gradient descent.
 
 <p align="center">
-<b>The general MAML algorithm.</b>
+<b>Algorithm for MAML.</b>
 </p>
 <p align="center">
-<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-12.png?raw=true" alt="Figure 12"/>
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-11.png?raw=true" alt="Figure 11"/>
 </p>
-
 The meta-optimization step relies on second derivatives. To make computation less expensive, a modified version of MAML omits second derivatives resulting in a simplified and cheaper implementation, known as First-Order MAML.
 
 ### Reptile
