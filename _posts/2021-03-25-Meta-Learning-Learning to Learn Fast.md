@@ -4,11 +4,36 @@ title: Meta-Learning-Learning to Learn Fast
 published: true
 ---
 
-An overview of the topic “[Meta-Learning: Learning to Learn Fast](https://lilianweng.github.io/lil-log/2018/11/30/meta-learning.html)”.
+An overview of the topic “[Meta-Learning: Learning to Learn Fast blog](https://lilianweng.github.io/lil-log/2018/11/30/meta-learning.html)” and "[Meta-Learning: Learning to Learn Fast ICML tutorial](https://sites.google.com/view/icml19metalearning)".
 <!--break-->
-A good meta-learning model should be capable of well adapting or generalizing to new tasks and environments that have never been encountered during training time. This is why meta-learning is known as "learning to learn". All images and tables in this post are from their respective paper.
+A good meta-learning model should be capable of well adapting or generalizing to new tasks and environments that have never been encountered during training time. This is why meta-learning is known as "learning to learn". All images and tables in this post are from their respective paper. The idea here is to create algorithms when the following scenarios exist:
+* Do not have a large dataset
+* Want a general-purpose AI system in the real world. This would need to continuously adapt and learn on the job. Learning each thing from scratch wouldn't cut it.
+* When the data has a long tail, i.e., some classes or labels have very few examples when compared to other classes.
+In all three settings, the supervised learning paradigm is being broken. For us humans, we use previous experience to support our prediction.
+There are two views to view meta learning. Note that the two views below are not describing different algorithms, but could be different views of the same algorithm.
+
+### Mechanistic View
+* Deep neural network model that can read in an entire dataset and make predictions for new datapoints.
+* Training this network uses a meta-dataset which itself consists of many datasets, each for a different task.
+* This view makes it easier to implement meta-learning algorithms
+
+### Probabilistic View
+* Extract prior information from a set of tasks that allow efficient learning of new tasks
+* Learning a new task uses this prior and (small) training set to infer most likely posterior parameters.
+* This view makes it easier to understand meta learning algorithms.
 
 ## Defining the Meta-Learning Model
+
+The simple meta-training problem can be described as <img src="https://latex.codecogs.com/svg.latex?\arg&space;\max_{\phi}&space;\log&space;p(\phi|D,D_{meta\_train})" title="\arg \max_{\phi} \log p(\phi|D,D_{meta\_train})" /> where, <img src="https://latex.codecogs.com/svg.latex?D" title="D" /> is the dataset we want to optimize for, and <img src="https://latex.codecogs.com/svg.latex?D_{meta\_train}" title="D_{meta\_train}" /> is the additional data we would like to use for this classification. However, if we do not want to use <img src="https://latex.codecogs.com/svg.latex?D_{meta\_train}" title="D_{meta\_train}" /> forever, we would need to boil down <img src="https://latex.codecogs.com/svg.latex?D_{meta\_train}" title="D_{meta\_train}" /> to another representation, say <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" />. This is the process of learning meta-parameters(<img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" />). The meta-learning problem boils down to the equation <img src="https://latex.codecogs.com/svg.latex?\theta*&space;=&space;\arg&space;\max_{\theta}\log&space;p(\theta|D_{meta\_train})" title="\theta* = \arg \max_{\theta}\log p(\theta|D_{meta\_train})" />. This allows us to classify the samples in <img src="https://latex.codecogs.com/svg.latex?D" title="D" /> using the following equation:
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\log&space;p(\phi|D,D_{meta\_train})&space;=&space;\log&space;\int&space;_{\phi}&space;p(\phi|D)p(\theta|D_{meta\_train})d\theta" title="\log p(\phi|D,D_{meta\_train}) = \log \int _{\phi} p(\phi|D)p(\theta|D_{meta\_train})d\theta" />
+</p>
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\approx&space;\log&space;p(\phi|D,\theta^*)&space;&plus;&space;\log&space;p(\theta^*|D_{meta\_train})" title="\approx \log p(\phi|D,\theta^*) + \log p(\theta^*|D_{meta\_train})" />
+</p>
+Applying argmax on both sides, we obtain the equation for adaptation: <img src="https://latex.codecogs.com/svg.latex?\arg&space;\max&space;\log&space;p(\phi|D,D_{meta\_train})&space;\approx&space;\log&space;p(\phi|D,\theta^*)" title="\arg \max \log p(\phi|D,D_{meta\_train}) \approx \log p(\phi|D,\theta^*)" />
+The complete picture of meta-learning involves learning of <img src="https://latex.codecogs.com/svg.latex?\phi^*" title="\phi^*" /> which is good for <img src="https://latex.codecogs.com/svg.latex?D_{meta\_test}" title="D_{meta\_test}" />.
 
 ### A simple view
 
@@ -34,7 +59,7 @@ In few-shot classification, the goal is to reduce the prediction error on data s
 * Sample a subset of labels <img src="https://latex.codecogs.com/svg.latex?L&space;\subset&space;L^{labels}" title="L \subset L^{labels}" />.
 * Sample a support set <img src="https://latex.codecogs.com/svg.latex?S^{L}&space;\subset&space;D" title="S^{L} \subset D" /> and a training batch <img src="https://latex.codecogs.com/svg.latex?B^{L}&space;\subset&space;D" title="B^{L} \subset D" />. Both of them only contain data points with labels belonging to the sampled label set <img src="https://latex.codecogs.com/svg.latex?L" title="L" />.
 * The support set is part of the model input
-* The final optimization uses the mini-batch to compute the loss and update the model parameters.
+* The final optimization uses the mini-batch to compute the loss and update the model parameters (<img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" />).
 
 Note, that the new optimal parameters is computed using:
 <p align="center">
@@ -47,13 +72,11 @@ A popular view of meta-learning decomposes the model update into two stages:
 * A classifier <img src="https://latex.codecogs.com/svg.latex?f_{\theta}" title="f_{\theta}" /> is the learner model trained for operating a given task.
 * In the meantime, a optimizer <img src="https://latex.codecogs.com/svg.latex?g_{\phi&space;}" title="g_{\phi }" /> learns how to update the learner model's parameters via the support set <img src="https://latex.codecogs.com/svg.latex?S" title="S" />.
 
-### Common Approaches
-
-There are three common approaches to meta-learning: metric-based, model-based and optimization-based.
+There are four common approaches to meta-learning: metric-based, model-based and optimization-based, and bayesian approach.
 
 ## Metric-Based
 
-The core idea in metric based meta-learning is similar to nearest neighbors algorithm and kernel density estimation. The predicted probability over a set of known labels <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> is a weighted sum of labels of support set samples. The weight is generated by a kernel function <img src="https://latex.codecogs.com/svg.latex?k_{\theta}" title="k_{\theta}" />, measuring the similarity between two data samples.
+The core idea in metric based meta-learning is similar to nearest neighbors algorithm and kernel density estimation. The predicted probability over a set of known labels <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> is a weighted sum of labels of support set samples. The weight is generated by a kernel function <img src="https://latex.codecogs.com/svg.latex?k_{\theta}" title="k_{\theta}" />, measuring the similarity between two data samples. These methods are also called non-parametric methods.
 
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?P_{\theta}(y|x,S)&space;=&space;\sum&space;_{(x_i,y_i)\in&space;S}&space;k_{\theta}(x,x_i)y_i" title="P_{\theta}(y|x,S) = \sum _{(x_i,y_i)\in S} k_{\theta}(x,x_i)y_i" />
@@ -64,6 +87,7 @@ All the models introduced introduced below learn embedding vectors of input data
 
 The siamese neural network is composed of two twin networks and their outputs are jointly trained on top with a function to learn the relationship between pairs of input data samples. The twin networks are identical, sharing the same weights and network parameters. In other words, both refer to the same embedding network that learns an efficient embedding to reveal relationship between pairs of data points.
 [Koch et al.](http://www.cs.toronto.edu/~rsalakhu/papers/oneshot1.pdf) proposed a method to use the siamese neural network to do one-shot image classification. First, the siamese network is trained for a verification task for twlling whether two input images are in the same class. It outputs the probability of two images belonging to the same class. Then, during test time, the siamese network processes all the image pairs between a test image and every image in the support set. The final prediction is the class of the support image with the highest probability.
+Here, meta-training would be a 2 way classification problem, and the meta-testing would be a N-way classification problem.
 
 <p align="center">
 <b>The architecute of convolutional siamese neural network for few-shot image classificaation.</b>
@@ -99,19 +123,7 @@ In the <b>Simple embedding</b> version, an embedding function is a neural networ
 However, the embedding vectors are critical inputs for building a good classifier and taking a single point might not be efficient. Hence, we create <b>full context embeddings</b>. The matching network model further proposed to enhance the embedding functions by taking as input the whole support set <img src="https://latex.codecogs.com/svg.latex?S" title="S" /> in addition to the original input, so that the learned embedding can be adjusted based on the relationship with other support samples.
 * <img src="https://latex.codecogs.com/svg.latex?g_{\theta}(x_i,S)" title="g_{\theta}(x_i,S)" /> uses a bidirectional LSTM to encode <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> in the context of the entire support set <img src="https://latex.codecogs.com/svg.latex?S" title="S" />.
 * <img src="https://latex.codecogs.com/svg.latex?f_{\theta}(x,S)" title="f_{\theta}(x,S)" /> encodes the test sample <img src="https://latex.codecogs.com/svg.latex?x" title="x" /> via an LSTM with read attention over the support set <img src="https://latex.codecogs.com/svg.latex?S" title="S" />. First the test sample goes through a simple neural network to extract basic features. Then an LSTM is trained with a read attention vector over the support set as part of the hidden state.
-This embedding method does help performance on a hard task (few-shot classification on mini Imagenet) but makes no difference on a simple task (Omniglot).
-
-### Relation Network
-
-Relation Network was proposed by [Sung et al.](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf), and is similar to the siamese network with a few differences:
-* The relationship is not captured by a simple L1 distance in the feature space, but predicted by a CNN classifier <img src="https://latex.codecogs.com/svg.latex?g_{\phi}" title="g_{\phi}" />. The relation score between a pair of inputs <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> and <img src="https://latex.codecogs.com/svg.latex?x_j" title="x_j" />, is <img src="https://latex.codecogs.com/svg.latex?r_{ij}&space;=&space;g_{\phi}([x_i,x_j])" title="r_{ij} = g_{\phi}([x_i,x_j])" /> where <img src="https://latex.codecogs.com/svg.latex?[.,.]" title="[.,.]" /> is concatenation.
-* The objective function is MSE loss, vecause conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification.
-<p align="center">
-<b>Relation Network architecture for a 5-way 1-shot problem with one query example.</b>
-</p>
-<p align="center">
-<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-4.png?raw=true" alt="Figure 4"/>
-</p>
+This embedding method does help performance on a hard task (few-shot classification on mini Imagenet) but makes no difference on a simple task (Omniglot). However, if we have a N-shot problem where <img src="https://latex.codecogs.com/svg.latex?N>1" title="N>1" />, then the model would compare the test sample with each image of each sample of every class. This challenge lead to the creation of an aggregation of class information, also called prototypical embedding which is used in the Prototypical networks, which are discussed later.
 
 ### Prototypical Networks
 
@@ -124,6 +136,21 @@ The prediction is made by computing the softmax of distances between these proto
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-5.png?raw=true" alt="Figure 5"/>
 </p>
+
+### Relation Network
+
+Relation Network was proposed by [Sung et al.](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf), and is similar to the siamese network with a few differences:
+* The relationship is not captured by a simple L1 distance in the feature space, but predicted by a CNN classifier <img src="https://latex.codecogs.com/svg.latex?g_{\phi}" title="g_{\phi}" />. The relation score between a pair of inputs <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> and <img src="https://latex.codecogs.com/svg.latex?x_j" title="x_j" />, is <img src="https://latex.codecogs.com/svg.latex?r_{ij}&space;=&space;g_{\phi}([x_i,x_j])" title="r_{ij} = g_{\phi}([x_i,x_j])" /> where <img src="https://latex.codecogs.com/svg.latex?[.,.]" title="[.,.]" /> is concatenation.
+* The objective function is MSE loss, vecause conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification.
+<p align="center">
+<b>Relation Network architecture for a 5-way 1-shot problem with one query example.</b>
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-4.png?raw=true" alt="Figure 4"/>
+</p>
+This addresses the challenge faced by the previous methods, where we need to model more complex relationships between datapoints. In this method, we learn non-linear relation module on embeddings. Other solutions to the challenge include:
+* Learning infinite mixture of prototypes, or
+* Perform message passing on embeddings using GNN
 
 ## Model-Based
 Model-based met-learning models make no assumption on the form of <img src="https://latex.codecogs.com/svg.latex?p_{\theta}(y|x)" title="p_{\theta}(y|x)" />. Rather, it depends on a model designed specifically for fast learning. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model.
@@ -201,7 +228,7 @@ The training process mimics what happens during test. During each training epoch
 
 ### MAML
 
-MAML is a fairly general optimization algorithm, compatible with any model that learns through gradient descent.
+MAML is a fairly general optimization algorithm, compatible with any model that learns through gradient descent. The idea is of fine-tuning breaks when transferring to a low data regime, since these approaches were not meant to optimize quickly, and would either overfit to the low data regime or not move far away from their initialization. Meta-learning overcomes this flaw, by taking the point after fine-tuning, and evaluate how well it generalizes to new datapoints for that task (measuring how successful fine-tuning was), and then optimize this objective with regard to the initial set of parameters. We would need to this across all datasets.
 
 <p align="center">
 <b>Algorithm for MAML.</b>
@@ -209,7 +236,27 @@ MAML is a fairly general optimization algorithm, compatible with any model that 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-11.png?raw=true" alt="Figure 11"/>
 </p>
-The meta-optimization step relies on second derivatives. To make computation less expensive, a modified version of MAML omits second derivatives resulting in a simplified and cheaper implementation, known as First-Order MAML.
+MAML can be viewed as computational graph, with embedded gradient operator. Note that the outer step of MAML assures us that the total loss over all tasks is being optimized, but there is no guarantee for the loss of a given task to be minimized.
+The meta-optimization step relies on second-order derivatives since, the <img src="https://latex.codecogs.com/svg.latex?\theta'" title="\theta'" /> already has a differentiation step going on. To make computation less expensive, a modified version of MAML omits second derivatives resulting in a simplified and cheaper implementation, known as First-Order MAML.
+
+### Probabilistic Interpretation of Optimization-Based Inference
+
+The key idea is to acquire <img src="https://latex.codecogs.com/svg.latex?\phi_i" title="\phi_i" /> through optimization. Meta-parameters <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> serve as a prior. One form of prior knowledge: initialization for fine-tuning.
+This initialization can be done as <img src="https://latex.codecogs.com/svg.latex?\max_{\theta}&space;\log&space;\prod&space;_i&space;p(D_i|\theta)" title="\max_{\theta} \log \prod _i p(D_i|\theta)" />. This is equivalent to <img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;\int&space;p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" title="\log \prod _i \int p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" /> using emprical Bayes. This can be approximated to:
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" title="\log \prod _i p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" />
+</p>
+where, <img src="https://latex.codecogs.com/svg.latex?\widehat{\phi_i}" title="\widehat{\phi_i}" /> is the MAP estimate.
+To compute MAP estimate, we use the following theorem: "Gradient Descent with early stopping is equal to the MAP inference under gaussian prior with mean at initial parameters (this is exactly true in linear case, and approximately true in nonlinear case)." MAML approximates hierrarchical Bayesian inference.
+Other forms of prior include:
+* Gradient descent with explicit gaussian prior: <img src="https://latex.codecogs.com/svg.latex?\phi&space;\leftarrow&space;\min_{\phi'}&space;L(\phi',D_{training})&space;&plus;&space;\frac{\lambda}{2}\begin{Vmatrix}&space;\theta&space;-&space;\phi'&space;\end{Vmatrix}^2" title="\phi \leftarrow \min_{\phi'} L(\phi',D_{training}) + \frac{\lambda}{2}\begin{Vmatrix} \theta - \phi' \end{Vmatrix}^2" />
+* Bayesian Linear Regression on learned features
+* Closed-form or convex optimization on learned features. Including ridge regression, logistic regression or support vector machines
+
+Some of the challenges in optimization based inference include:
+* <b>Selection of architecture for effective inner gradient step</b>: We notice that models that are deep and narrow seem to do well when used with MAML. This can be justified by the fact that a basic architecture + MAML only achieves an accuracy of 63.11% whereas AutoMeta(architecture search) + MAML achieves an accuracy of 74.65% which is a substantial boost.
+* <b>Second-order meta-optimization can exhibit instabilities</b>: One of the crude workarounds for this problem includes approximation of the second order gradient to be identity matrix. This idea works well on simple problems, but falls through on more complex problems such as reinforcement learning and imitation learning. Another idea is to automatically learn inner vector learning rate, and tune the outer learning rate ([AlphaMAML](https://arxiv.org/pdf/1905.07435.pdf)). Another idea is to optimize only a subset of the parameters in the inner loop. Other ideas include decoupling inner learning rates, and batch norm statistics per step ([MAML++](https://antreasantoniou.github.io/documents/How_to_train_your_MAML_poster.pdf)) and introducing context variables for increased expressive power.
 
 ### Reptile
 
@@ -233,3 +280,10 @@ To find a solution that is good across tasks, we would like to find a parameter 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-13.png?raw=true" alt="Figure 13"/>
 </p>
+
+## Bayesian Meta-Learning
+
+parametric approaches use deterministic function <img src="https://latex.codecogs.com/svg.latex?p(\phi_i|D_i^{training},\theta)" title="p(\phi_i|D_i^{training},\theta)" /> (i.e. a point estimate).
+Since few-shot learning problems may be ambiguous, even with a prior. Hence, using bayesian approach might be better. We would like to generate hypotheses about the underlying function instead.
+In this method, we use a neural net to produce an intermediate representation <img src="https://latex.codecogs.com/svg.latex?q(h|D_i^{training})" title="q(h|D_i^{training})" /> which is a Gaussian distribution over <img src="https://latex.codecogs.com/svg.latex?h_i" title="h_i" />. We then train with amortized variational inference (VAE) to obtain variance, etc. of the distribution. This approach is for black-box approach or neural network approach.
+For optimization based approach, we could model <img src="https://latex.codecogs.com/svg.latex?p(\phi_i|\theta)" title="p(\phi_i|\theta)" /> as Gaussian and use the same sort of variational inference as mentioned before, but use the inference network <img src="https://latex.codecogs.com/svg.latex?q" title="q" /> to optimize over <img src="https://latex.codecogs.com/svg.latex?\phi" title="\phi" />. If we do not want to model <img src="https://latex.codecogs.com/svg.latex?p(\phi_i|\theta)" title="p(\phi_i|\theta)" /> as Gaussian, we can use Stein Variational Gradient (BMAML) on the last layer of the neural network and use gradient based inference on last layer only. We could also use an ensemble of MAML (EMAML).
