@@ -52,7 +52,7 @@ While every SCM <img src="https://latex.codecogs.com/svg.latex?M'" title="M'" />
 
 ### Computing ACE using Causal Regressors
 
-The ACE requires the computation of two quantities: the interventional expectation and the baseline. They defined the baseline value for each input neuron to <img src="https://latex.codecogs.com/svg.latex?baseline_{x_i}&space;=&space;\mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i&space;=&space;\alpha]]" title="baseline_{x_i} = \mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i = \alpha]]" />. The interventioonal expectation is a function of <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" />, as all other variables are marginalized out.
+The ACE requires the computation of two quantities: the interventional expectation and the baseline. They defined the baseline value for each input neuron to <img src="https://latex.codecogs.com/svg.latex?baseline_{x_i}&space;=&space;\mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i&space;=&space;\alpha]]" title="baseline_{x_i} = \mathbb{E}_{x_i}[\mathbb{E}_{y}[y|x_i = \alpha]]" />. The interventional expectation is a function of <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" />, as all other variables are marginalized out.
 
 ## Overall Methodology
 
