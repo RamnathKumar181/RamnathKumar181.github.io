@@ -60,7 +60,7 @@ First, we encode the input to a feature map, that reflect useful structure in th
 <b>Maximizing mutual information between local features and global features.</b>
 </p>
 <p align="center">
-<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/18/Figure-3.png?raw=true" alt="Figure 3"/>
+<img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/20/Figure-3.png?raw=true" alt="Figure 3"/>
 </p>
 
 ### Matching Representations to a prior distribution
