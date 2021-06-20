@@ -9,9 +9,21 @@ An overview of the paper “[Neural  Network Attributions- A causal Perspective]
 The author proposes a new attribution method for neural networks developed using first principles of causality. All images and tables in this post are from their paper.
 The neural network architecture is viewed as a Structural Causal Model, a nd a methodology to compute the causal effect of each feature on the output is presented. Formally, attributions are defined as the effect of an input feature on the prediction function's output. This is an inherently causal question. While gradients answer the question "How much would perturbing a particular input affect the output?", they do not capture the causal influence of an input on a particular neuron. The author's approach views the neural network as a structural causal model (SCM) and proposes a new method to compute the Average Causal Effect of an input on an output neuron.  
 
+## Attributions of Neural Network Models
+
+Attribution is defined as "effect of an input feature on the prediction function's output". This is inherently a causal question. Previous methods such as Gradient-based methods ask the question "how much would perturbing a particular input affect the output?". This is not a causal analysis. Other methods also include surrogate models (or interpretable regressors) which is usually correlation based. Surrogate model is a different model that hopes to explain the weights learned by the neural network.
+
+Gradient-based and Perturbation-based methods could be viewed as special cases of Individual Causal Effect.
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?ICE^y_{do(x_i=\alpha)}&space;=&space;y_{x_i=\alpha}(u)&space;-&space;y(u)" title="ICE^y_{do(x_i=\alpha)} = y_{x_i=\alpha}(u) - y(u)" />
+</p>
+
+We intervene and set <img src="https://latex.codecogs.com/svg.latex?\alpha" title="\alpha" /> to <img src="https://latex.codecogs.com/svg.latex?u_i&space;&plus;&space;\epsilon" title="u_i + \epsilon" />. Note that gradient based approaches required to pass one specific example which was used to compute gradients. Such methods are sensitive and cannot give global attributions.
+
 ## Neural Networks as Structural Causal Models (SCM)
 
-The authors begin by stating that neural network architectures can be trivially interpreted as SCMs. Note that the authors do not explicitly attempt to find the causal direction in this case, but only identify the causal relationships given a learned function. Neural networks can be interpreted as directed acyclic graphs with directed edges from a lower layer to layer above. The final output is thus based on a hierarchy of interactions between lower level nodes.
+The authors begin by stating that neural network architectures can be trivially interpreted as SCMs. Note that the authors do not explicitly attempt to find the causal direction in this case, but only identify the causal relationships given a learned function. Neural networks can be interpreted as directed acyclic graphs with directed edges from a lower layer to layer above. The final output is thus based on a hierarchy of interactions between lower level nodes. Furthermore, the method works on the assumption that "Input dimensions are causally independent of each other" (they can be jointly caused by a latent confounder). Another assumption of the SCM is that the intervened input neuron is d-seperated from other input neurons. This would mean that, given an intervention on a particular variable, the probability distribution of all other input neurons does not change, i.e. for <img src="https://latex.codecogs.com/svg.latex?x_j&space;\neq&space;x_i,&space;P(x_j|do(x_i=\alpha))&space;=&space;P(x_j)" title="x_j \neq x_i, P(x_j|do(x_i=\alpha)) = P(x_j)" />
 
 An <img src="https://latex.codecogs.com/svg.latex?n" title="n" /> layer feedforward neural network <img src="https://latex.codecogs.com/svg.latex?N(l_1,&space;l_2,&space;...,&space;l_n)" title="N(l_1, l_2, ..., l_n)" /> where <img src="https://latex.codecogs.com/svg.latex?l_i" title="l_i" /> is the set of neurons in layer <img src="https://latex.codecogs.com/svg.latex?i" title="i" /> has a corresponding SCM <img src="https://latex.codecogs.com/svg.latex?M([l_1,l_2,...,l_n],U,[f_1,f_2,...,f_n],P_U)" title="M([l_1,l_2,...,l_n],U,[f_1,f_2,...,f_n],P_U)" />, where <img src="https://latex.codecogs.com/svg.latex?l_1" title="l_1" /> is the input layer, and <img src="https://latex.codecogs.com/svg.latex?l_n" title="l_n" /> is the output layer. Corresponding to every layer <img src="https://latex.codecogs.com/svg.latex?l_i" title="l_i" />, <img src="https://latex.codecogs.com/svg.latex?f_i" title="f_i" /> refers to the set of causal functions for neurons in layer <img src="https://latex.codecogs.com/svg.latex?i" title="i" />. <img src="https://latex.codecogs.com/svg.latex?U" title="U" /> refers to a set of exogenous random variables which act as causal factors for input neurons. THe SCM above can be reduced to an SCM <img src="https://latex.codecogs.com/svg.latex?M'([l_1,l_n],U,f',P_U)" title="M'([l_1,l_n],U,f',P_U)" />. marginalizing the hidden neurons out by recursive substitution is analogous to deleting the edges connecting these nodes and creating new directed edges from the parents of the deleted neurons to their respective child vertices in the correspoinding Bayesian network.
 <p align="center">
@@ -58,3 +70,14 @@ The ACE requires the computation of two quantities: the interventional expectati
 
 For feedforward networks, the calculation of interventional expectations is straightforward. The empirical means and covariances between input neurons can be precomputed from training data.
 Since calculating interventional expectations can be costly; so, we learn a causal regressor function that can approximate this expectation for subsequent on-the-fly computation of interventional expectations. The output of intervenentional expectations at different interventions of <img src="https://latex.codecogs.com/svg.latex?x_i" title="x_i" /> is used as training data for the polynomial class of functions.
+
+## Axioms of Attributions
+In all below axioms, <img src="https://latex.codecogs.com/svg.latex?F" title="F" /> denotes the causal function.
+The axioms of attribution include:
+* Completeness - For any input <img src="https://latex.codecogs.com/svg.latex?x" title="x" />, the sum of the feature attributions equals <img src="https://latex.codecogs.com/svg.latex?F(x)&space;=&space;\sum_i&space;A^F_i(x)" title="F(x) = \sum_i A^F_i(x)" />.
+* Sensitivity - If <img src="https://latex.codecogs.com/svg.latex?x" title="x" /> has only one non-zero feature and <img src="https://latex.codecogs.com/svg.latex?F(x)\neq&space;0" title="F(x)\neq 0" />, then the attribution to that feature should be non-zero.
+* Implementation Invariance - When two neural networks compute the same mathematical function <img src="https://latex.codecogs.com/svg.latex?F(x)" title="F(x)" />, regardless of how differently they are implemented, the attributions to all features should always be identical.
+* Linearity
+* Symmetry Preserving - For any input <img src="https://latex.codecogs.com/svg.latex?x" title="x" /> where the values of two symmetric features are the same, their attributions should be identical as well.
+
+Gradient based methods violate sensitivity axiom. Some surrogate methods violate Implementation Invariance axiom.
