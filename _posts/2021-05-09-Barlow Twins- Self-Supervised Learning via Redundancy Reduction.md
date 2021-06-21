@@ -7,7 +7,7 @@ published: true
 An overview of the paper “[Barlow Twins- Self-Supervised Learning via Redundancy Reduction](https://arxiv.org/pdf/2103.03230.pdf)”.
 <!--break-->
 Self-supervised learning is rapidly closing the gap with supervised learning methods on large vision benchmarks. A successful approach is to learn representations which are invariant to distortions of the input sample. However, a recurring issue with this approach is the existence of trivial constant solutions. Most current methods avoid these trivial solutions by careful implementation details. In this paper, the authors propose an objective function that naturally avoids such collapse by measuring the cross-correlation matrix between the outputs of two identical networks fed with distorted versions of a sample, and making them as close to identity as possible. This causes the representation vectors of distorted versions of a sample to be similar, while minimizing the redundancy between the components of these vectors. All images and tables in this post are from their paper.
-Barlow in his paper, hypotgesized that the goal of sensory processing is to recode highly redundant sensory inputs into a factorial code (a code with statistically independent components).
+Barlow in his paper, hypothesized that the goal of sensory processing is to recode highly redundant sensory inputs into a factorial code (a code with statistically independent components).
 
 <p align="center">
 <b>Brief Overview of Methodology</b>
