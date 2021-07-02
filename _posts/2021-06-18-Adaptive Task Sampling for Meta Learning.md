@@ -31,9 +31,8 @@ close to the model’s decision boundary.
 ### Class based Sampling
 
 Class-based sampling (c-sampling) approach updates the class selection probability <img src="https://latex.codecogs.com/svg.latex?p^{t&plus;1}_C(c)" title="p^{t+1}_C(c)" /> in each episode.
-If the given target variable<img src="https://latex.codecogs.com/svg.latex?y" title="y" /> is such that <img src="https://latex.codecogs.com/svg.latex?y\neq&space;c" title="y\neq c" />, then we would increase the score such that the model is more confident about its prediction. However, when <img src="https://latex.codecogs.com/svg.latex?y=&space;c" title="y= c" />, we will increase score based on max error. This would enforce the model to choose classes which not only improve performance of other classes, but also lead to most margin of improvement for the given class <img src="https://latex.codecogs.com/svg.latex?c" title="c" />.
-It implicitly assumes that the difficulty of each class is indepen-
-dent. Therefore, it updates the class selection probability in a decoupled way. However, the limitation of such a model is that, assembling the most difficult classes do not necessarily lead to a difficult task.
+If the given target variable <img src="https://latex.codecogs.com/svg.latex?y" title="y" /> is such that <img src="https://latex.codecogs.com/svg.latex?y\neq&space;c" title="y\neq c" />, then we would increase the score such that the model is more confident about its prediction. However, when <img src="https://latex.codecogs.com/svg.latex?y=&space;c" title="y= c" />, we will increase score based on max error. This would enforce the model to choose classes which not only improve performance of other classes, but also lead to most margin of improvement for the given class <img src="https://latex.codecogs.com/svg.latex?c" title="c" />.
+It implicitly assumes that the difficulty of each class is independent. Therefore, it updates the class selection probability in a decoupled way. However, the limitation of such a model is that, assembling the most difficult classes do not necessarily lead to a difficult task.
 
 ### Class Pair Based Sampling
 
