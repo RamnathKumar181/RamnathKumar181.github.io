@@ -239,25 +239,6 @@ MAML is a fairly general optimization algorithm, compatible with any model that 
 MAML can be viewed as computational graph, with embedded gradient operator. Note that the outer step of MAML assures us that the total loss over all tasks is being optimized, but there is no guarantee for the loss of a given task to be minimized.
 The meta-optimization step relies on second-order derivatives since, the <img src="https://latex.codecogs.com/svg.latex?\theta'" title="\theta'" /> already has a differentiation step going on. To make computation less expensive, a modified version of MAML omits second derivatives resulting in a simplified and cheaper implementation, known as First-Order MAML.
 
-### Probabilistic Interpretation of Optimization-Based Inference
-
-The key idea is to acquire <img src="https://latex.codecogs.com/svg.latex?\phi_i" title="\phi_i" /> through optimization. Meta-parameters <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> serve as a prior. One form of prior knowledge: initialization for fine-tuning.
-This initialization can be done as <img src="https://latex.codecogs.com/svg.latex?\max_{\theta}&space;\log&space;\prod&space;_i&space;p(D_i|\theta)" title="\max_{\theta} \log \prod _i p(D_i|\theta)" />. This is equivalent to <img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;\int&space;p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" title="\log \prod _i \int p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" /> using emprical Bayes. This can be approximated to:
-
-<p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" title="\log \prod _i p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" />
-</p>
-where, <img src="https://latex.codecogs.com/svg.latex?\widehat{\phi_i}" title="\widehat{\phi_i}" /> is the MAP estimate.
-To compute MAP estimate, we use the following theorem: "Gradient Descent with early stopping is equal to the MAP inference under gaussian prior with mean at initial parameters (this is exactly true in linear case, and approximately true in nonlinear case)." MAML approximates hierrarchical Bayesian inference.
-Other forms of prior include:
-* Gradient descent with explicit gaussian prior: <img src="https://latex.codecogs.com/svg.latex?\phi&space;\leftarrow&space;\min_{\phi'}&space;L(\phi',D_{training})&space;&plus;&space;\frac{\lambda}{2}\begin{Vmatrix}&space;\theta&space;-&space;\phi'&space;\end{Vmatrix}^2" title="\phi \leftarrow \min_{\phi'} L(\phi',D_{training}) + \frac{\lambda}{2}\begin{Vmatrix} \theta - \phi' \end{Vmatrix}^2" />
-* Bayesian Linear Regression on learned features
-* Closed-form or convex optimization on learned features. Including ridge regression, logistic regression or support vector machines
-
-Some of the challenges in optimization based inference include:
-* <b>Selection of architecture for effective inner gradient step</b>: We notice that models that are deep and narrow seem to do well when used with MAML. This can be justified by the fact that a basic architecture + MAML only achieves an accuracy of 63.11% whereas AutoMeta(architecture search) + MAML achieves an accuracy of 74.65% which is a substantial boost.
-* <b>Second-order meta-optimization can exhibit instabilities</b>: One of the crude workarounds for this problem includes approximation of the second order gradient to be identity matrix. This idea works well on simple problems, but falls through on more complex problems such as reinforcement learning and imitation learning. Another idea is to automatically learn inner vector learning rate, and tune the outer learning rate ([AlphaMAML](https://arxiv.org/pdf/1905.07435.pdf)). Another idea is to optimize only a subset of the parameters in the inner loop. Other ideas include decoupling inner learning rates, and batch norm statistics per step ([MAML++](https://antreasantoniou.github.io/documents/How_to_train_your_MAML_poster.pdf)) and introducing context variables for increased expressive power.
-
 ### Reptile
 
 Reptile proposed by [Nichol et al.](https://arxiv.org/abs/1803.02999) is a simple meta-learning optimization algorithm which works by repeatedly:
@@ -280,6 +261,25 @@ To find a solution that is good across tasks, we would like to find a parameter 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ramnathkumar181/ramnathkumar181.github.io/master/assets/Papers/19/Figure-13.png?raw=true" alt="Figure 13"/>
 </p>
+
+### Probabilistic Interpretation of Optimization-Based Inference
+
+The key idea is to acquire <img src="https://latex.codecogs.com/svg.latex?\phi_i" title="\phi_i" /> through optimization. Meta-parameters <img src="https://latex.codecogs.com/svg.latex?\theta" title="\theta" /> serve as a prior. One form of prior knowledge: initialization for fine-tuning.
+This initialization can be done as <img src="https://latex.codecogs.com/svg.latex?\max_{\theta}&space;\log&space;\prod&space;_i&space;p(D_i|\theta)" title="\max_{\theta} \log \prod _i p(D_i|\theta)" />. This is equivalent to <img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;\int&space;p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" title="\log \prod _i \int p(D_i|\phi_i)p(\phi_i|\theta)d\phi_i" /> using emprical Bayes. This can be approximated to:
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\log&space;\prod&space;_i&space;p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" title="\log \prod _i p(D_i|\widehat{\phi_i})p(\widehat{\phi_i}|\theta)" />
+</p>
+where, <img src="https://latex.codecogs.com/svg.latex?\widehat{\phi_i}" title="\widehat{\phi_i}" /> is the MAP estimate.
+To compute MAP estimate, we use the following theorem: "Gradient Descent with early stopping is equal to the MAP inference under gaussian prior with mean at initial parameters (this is exactly true in linear case, and approximately true in nonlinear case)." MAML approximates hierrarchical Bayesian inference.
+Other forms of prior include:
+* Gradient descent with explicit gaussian prior: <img src="https://latex.codecogs.com/svg.latex?\phi&space;\leftarrow&space;\min_{\phi'}&space;L(\phi',D_{training})&space;&plus;&space;\frac{\lambda}{2}\begin{Vmatrix}&space;\theta&space;-&space;\phi'&space;\end{Vmatrix}^2" title="\phi \leftarrow \min_{\phi'} L(\phi',D_{training}) + \frac{\lambda}{2}\begin{Vmatrix} \theta - \phi' \end{Vmatrix}^2" />
+* Bayesian Linear Regression on learned features
+* Closed-form or convex optimization on learned features. Including ridge regression, logistic regression or support vector machines
+
+Some of the challenges in optimization based inference include:
+* <b>Selection of architecture for effective inner gradient step</b>: We notice that models that are deep and narrow seem to do well when used with MAML. This can be justified by the fact that a basic architecture + MAML only achieves an accuracy of 63.11% whereas AutoMeta(architecture search) + MAML achieves an accuracy of 74.65% which is a substantial boost.
+* <b>Second-order meta-optimization can exhibit instabilities</b>: One of the crude workarounds for this problem includes approximation of the second order gradient to be identity matrix. This idea works well on simple problems, but falls through on more complex problems such as reinforcement learning and imitation learning. Another idea is to automatically learn inner vector learning rate, and tune the outer learning rate ([AlphaMAML](https://arxiv.org/pdf/1905.07435.pdf)). Another idea is to optimize only a subset of the parameters in the inner loop. Other ideas include decoupling inner learning rates, and batch norm statistics per step ([MAML++](https://antreasantoniou.github.io/documents/How_to_train_your_MAML_poster.pdf)) and introducing context variables for increased expressive power.
 
 ## Bayesian Meta-Learning
 

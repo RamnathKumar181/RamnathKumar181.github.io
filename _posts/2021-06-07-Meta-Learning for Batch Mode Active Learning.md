@@ -36,7 +36,7 @@ We can calculate a set of statistics relating each unlabeled item <img src="http
 * <b>Diversity Distribution:</b> The same set of statistics can also be used to compute a feature vector describing the unlabeled item to classifier relationship as:
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\phi_i&space;=&space;f_{\phi}(\prod(\{c_k\}^K_{k=1},&space;\widetilde{x}_i))" title="\phi_i = f_{\phi}(\prod(\{c_k\}^K_{k=1}, \widetilde{x}_i))" /> (\{c_k\}^K_{k=1},\widetilde{x}_i))" />
+<img src="https://latex.codecogs.com/svg.latex?\phi_i&space;=&space;f_{\phi}(\prod(\{c_k\}^K_{k=1},&space;\widetilde{x}_i))" title="\phi_i = f_{\phi}(\prod(\{c_k\}^K_{k=1}, \widetilde{x}_i))" />
 </p>
 
 <img src="https://latex.codecogs.com/svg.latex?f_{\phi}" title="f_{\phi}" /> is a MLP with parameters <img src="https://latex.codecogs.com/svg.latex?\phi" title="\phi" />. The goal of the diversity distribution is to increase the probability of selecting unlabeled items which are dissimilar from the items that already make up the set <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> where similarity between each item's corresponding feature vector. The probability of selecting an unlabeled item according to its diversity is then:
